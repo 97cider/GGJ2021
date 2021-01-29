@@ -18,7 +18,7 @@ public class PlayerCombat : MonoBehaviour
     void Update() 
     {
         // handle combat
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0) && !GameManager.isPaused) 
         {
             if (_currentWeapon != null) 
             {
