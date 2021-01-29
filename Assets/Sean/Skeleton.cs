@@ -20,6 +20,7 @@ public class Skeleton : Enemy
         // flash colors
         if(base._enemyHealth > 0)
         {
+            iTween.ShakeRotation(this.gameObject, new Vector3(0.0f, 0.0f, 20.0f), 0.3f);
             StartCoroutine(DamageFlicker());
         }
     }
