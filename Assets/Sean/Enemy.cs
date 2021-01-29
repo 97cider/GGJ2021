@@ -7,18 +7,18 @@ using UnityEngine.Events;
 // chests, barrells, destroyable traps should all count as enemies for the time being
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _enemyHealth;
+    [SerializeField] protected float _enemyHealth;
 
-    [SerializeField] private float _enemyMaxHealth;
+    [SerializeField] protected float _enemyMaxHealth;
 
     public UnityEvent DieEvents;
 
-    public void Awake() 
+    protected virtual void Awake() 
     {
         this._enemyHealth = this._enemyMaxHealth;
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         this._enemyHealth -= damage;
         if (this._enemyHealth <= 0)
