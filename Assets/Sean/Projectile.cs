@@ -9,9 +9,15 @@ public class Projectile : MonoBehaviour
 
     public float damage;
 
-    // public bool 
+    public bool hasDuration; 
+
+    public float duration;
 
     public float rotation;
+
+    public bool pierceWalls;
+
+    public bool pierceTargets;
 
     void OnCollisionEnter() 
     {
@@ -21,7 +27,7 @@ public class Projectile : MonoBehaviour
     void OnBecameInvisible()
     {
         // GameObject.Destroy(this);
-        Destroy(this.gameObject, 1.0f);
+        this.Dispose();
         // this.gameObject.SetActive(false);
     }
 
@@ -31,7 +37,21 @@ public class Projectile : MonoBehaviour
         if (enemyCandidate != null)
         {
             enemyCandidate.TakeDamage(this.damage);
+            if (!pierceTargets)
+            {
+                this.Dispose();
+            }
+            return;
         }
+        if (other.gameObject.layer != LayerMask.NameToLayer("Default") && !pierceWalls)
+        {
+            this.Dispose();
+            return;
+        }
+    }
+
+    protected void Dispose() 
+    {
         Destroy(this.gameObject);
     }
 
@@ -39,5 +59,13 @@ public class Projectile : MonoBehaviour
     {
         Vector2 target = direction * speed * Time.deltaTime;
         this.transform.position += new Vector3(target.x, target.y, 0.0f);
+        if (this.hasDuration) 
+        {
+            this.duration -= Time.deltaTime;
+            if (this.duration <= 0.0f)
+            {
+                this.Dispose();
+            }
+        }
     }
 }

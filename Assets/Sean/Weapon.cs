@@ -39,6 +39,11 @@ public class Weapon : MonoBehaviour
             proj.speed = _projectileSpeed;
             proj.direction = orientation;
             proj.damage = _weaponDamage;
+            if (_projectileDuration > 0.0f)
+            {
+                proj.hasDuration = true;
+                proj.duration = _projectileDuration;
+            }
         }
     }
 }

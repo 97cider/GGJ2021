@@ -116,7 +116,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   direction: {x: 0, y: 0}
+  damage: 0
+  hasDuration: 0
+  duration: 0
   rotation: 0
+  pierceWalls: 1
+  pierceTargets: 1
 --- !u!50 &868692103669587026
 Rigidbody2D:
   serializedVersion: 4
