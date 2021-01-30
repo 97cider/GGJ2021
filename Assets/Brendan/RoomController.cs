@@ -11,7 +11,9 @@ public class RoomController : MonoBehaviour
     public Camera mainCamera;
     private Vector3 leftMost, rightMost, downMost;
     public List<GameObject> _LoadedRooms;
+    public UiController uiController;
     public GameObject player;
+    public ItemController itemController;
     public int movement;
     private float zoffset;
     // Start is called before the first frame update
@@ -34,7 +36,13 @@ public class RoomController : MonoBehaviour
             Debug.Log(t.position);
             //Vector3 spawner = _currentMap.transform.Find("Spawn").position;
             Debug.Log($"Player is spawning at {t.position}");
+            Accessory a = itemController.getRandomAccessory();
+            player.GetComponent<PlayerStats>().setCurrentAccessory(a);
             player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
+
+            uiController.player = player;
+            
+            // Show the current accessory in the 
         }
         leftMost = new Vector3(0,0,zoffset);
         rightMost = new Vector3(0,0,zoffset);
@@ -130,7 +138,7 @@ public class RoomController : MonoBehaviour
     public void setNextRoomLevel(){
         this._nextMap.GetComponent<Room>().roomController = this.gameObject;
     }
-    GameObject pickRandomRoom(){
+    private GameObject pickRandomRoom(){
         if (_LoadedRooms.Count == 0){
             Debug.Log("You have no rooms!");
             return null;

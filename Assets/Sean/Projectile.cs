@@ -52,9 +52,12 @@ public class Projectile : MonoBehaviour
 
     public virtual void OnShoot()
     {
-        Vector3 projScale = this.transform.localScale;
-        projScale.x *= (direction.x / Mathf.Abs(direction.x));
-        this.transform.localScale = projScale;
+        if(direction.x != 0.0f)
+        {
+            Vector3 projScale = this.transform.localScale;
+            projScale.x *= (direction.x / Mathf.Abs(direction.x));
+            this.transform.localScale = projScale;
+        }
     }
 
     protected void Dispose() 

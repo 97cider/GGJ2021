@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public Sprite weaponSprite;
     [SerializeField] private string _weaponName;
 
     [SerializeField] private string _weaponDescription;
 
-    [SerializeField] private int _weaponDamage;
+    [SerializeField] private float _weaponDamage;
 
     [SerializeField] private bool isProjectileWeapon;
 
@@ -21,6 +22,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float _fireRate;
 
     [SerializeField] private bool _forceOrientation;
+    [SerializeField] private Vector3 projectileScale;
 
     [SerializeField] private Vector2 _overrideOrientation;
     private PlayerStats _player;
@@ -35,6 +37,13 @@ public class Weapon : MonoBehaviour
         return this._weaponName;
     }
 
+    public void modifyWeaponStats(Accessory a){
+        // Transfer over properties, multiplicitavely.
+        if (a != null)
+        {
+            _weaponDamage =_weaponDamage * a.baselineDamageModifier;
+        }
+    }
     public float GetWeaponCooldown()
     {
         return this._fireRate;
