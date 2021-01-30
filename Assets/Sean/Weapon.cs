@@ -38,7 +38,10 @@ public class Weapon : MonoBehaviour
 
     public void modifyWeaponStats(Accessory a){
         // Transfer over properties, multiplicitavely.
-        _weaponDamage =_weaponDamage * a.baselineDamageModifier;
+        if (a != null)
+        {
+            _weaponDamage =_weaponDamage * a.baselineDamageModifier;
+        }
     }
     public float GetWeaponCooldown()
     {
@@ -50,7 +53,6 @@ public class Weapon : MonoBehaviour
         if (isProjectileWeapon) 
         {
             GameObject boolet = GameObject.Instantiate(_projectilePrefab, origin, Quaternion.identity);
-            boolet.transform.localScale = projectileScale;
             Projectile proj = boolet.GetComponent<Projectile>();
             proj.speed = _projectileSpeed;
             if (!_forceOrientation) 

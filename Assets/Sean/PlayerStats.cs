@@ -33,8 +33,11 @@ public class PlayerStats : MonoBehaviour
     }
     public void Start()
     {
+        if(_currentAccessory != null) 
+        {
+            this._maxHealth = _currentAccessory.maxJumpScalar;
+        }
         // Modify properties based on current accessory
-        this._maxHealth = _currentAccessory.maxJumpScalar;
         var w = GetWeapon();
         w.modifyWeaponStats(this._currentAccessory);
 
