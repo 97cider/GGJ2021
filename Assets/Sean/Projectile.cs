@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
         // this.gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         Enemy enemyCandidate = other.GetComponent<Enemy>();
         if (enemyCandidate != null)

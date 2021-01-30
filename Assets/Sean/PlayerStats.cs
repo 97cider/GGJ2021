@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Vector2 _orientation;
 
+    public UnityEvent PlayerDeathEvent;
+
     public Weapon GetWeapon()
     {
         return this._currentWeapon;
@@ -25,5 +28,15 @@ public class PlayerStats : MonoBehaviour
     public Vector2 GetOrientation()
     {
         return this._orientation;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        _currentHealth -= damage;
+        
+        if(_currentHealth <= 0.0f)
+        {
+            PlayerDeathEvent.Invoke();
+        }
     }
 }

@@ -179,6 +179,19 @@ public class CharacterController2D : MonoBehaviour
 
             // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+            // If the input is moving the player right and the player is facing left...
+            if (move > 0 && !m_FacingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
+            // Otherwise if the input is moving the player left and the player is facing right...
+            else if (move < 0 && m_FacingRight)
+            {
+                // ... flip the player.
+                Flip();
+            }
         }
     }
 
@@ -233,5 +246,19 @@ public class CharacterController2D : MonoBehaviour
             m_Rigidbody2D.gravityScale += (Time.deltaTime * addedGrav);
             m_Rigidbody2D.gravityScale = Mathf.Clamp(m_Rigidbody2D.gravityScale, startingGravScale, maxGravityScale);
         }
+    }
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        m_FacingRight = !m_FacingRight;
+
+        // Multiply the player's x local scale by -1.
+        Vector3 shootPointPosition = ShootPoint.transform.localPosition;
+        shootPointPosition.x *= -1;
+        ShootPoint.transform.localPosition = shootPointPosition;
+
+        Vector3 spriteScale = CharacterSprite.transform.localScale;
+        spriteScale.x *= -1;
+        CharacterSprite.transform.localScale = spriteScale;
     }
 }
