@@ -6,11 +6,13 @@ public class RoomController : MonoBehaviour
 {
     public GameObject scene;
     public GameObject _currentMap;
+    public GameObject _nextMap;
     public GameObject _exitTest;
     public Camera mainCamera;
     private Vector3 leftMost, rightMost, downMost;
     public List<GameObject> _LoadedRooms;
     public GameObject player;
+    public int movement;
     private float zoffset;
     // Start is called before the first frame update
     void Start()
@@ -21,18 +23,18 @@ public class RoomController : MonoBehaviour
         //this._getTilemaps();
         if (_LoadedRooms.Count > 0){
             var current_level = this.pickRandomRoom();
-            scene.GetComponent<SceneHandler>().tileMap = current_level;
-            this._currentMap = GameObject.Instantiate(scene.GetComponent<SceneHandler>().tileMap);
+            _currentMap = current_level;
+            this._currentMap = GameObject.Instantiate(_currentMap);
+            this._currentMap.GetComponent<Room>().roomController = this.gameObject;
             this.setNextLevel();
-            //scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel = next_level;
-            //scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel = setNextLevel();
+            //_nextMap = next_level;
 
             // Spawn the player
-            Transform t =  scene.GetComponent<SceneHandler>().tileMap.transform.GetChild(0).transform.Find("Spawn");
+            Transform t =  _currentMap.transform.GetChild(0).transform.Find("Spawn");
             Debug.Log(t.position);
-            //Vector3 spawner = scene.GetComponent<SceneHandler>().tileMap.transform.Find("Spawn").position;
+            //Vector3 spawner = _currentMap.transform.Find("Spawn").position;
             Debug.Log($"Player is spawning at {t.position}");
-            Instantiate(player, t.position, Quaternion.identity);
+            player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
         }
         leftMost = new Vector3(0,0,zoffset);
         rightMost = new Vector3(0,0,zoffset);
@@ -45,66 +47,88 @@ public class RoomController : MonoBehaviour
     }
     public void setNextLevel(){
         var new_level = this.pickRandomRoom();
-        while (new_level == scene.GetComponent<SceneHandler>().tileMap){
+        while (new_level.gameObject == _currentMap.gameObject){
             new_level = this.pickRandomRoom();
         }
+        Debug.LogError(new_level);
+        Debug.LogError(_currentMap);
         // Set the current level in the room controller
-        //_currentMap.GetComponent<Room>().nextLevel = new_level;
+        //_nextMap = new_level;
         // Set the current level in the scene
-        scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel = new_level;
+        _nextMap = new_level;
+        this._nextMap = new_level;
     }
     public void destroyRoom(){
         Destroy(this._currentMap);
     }
     public void setLevel(){
-        if (scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel != null){
-            //scene.GetComponent<SceneHandler>().tileMap = scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel;
+        if (_nextMap != null){
+            //_currentMap = _nextMap;
             var new_level = this.pickRandomRoom();
             //Remember to do check
-            while (new_level == scene.GetComponent<SceneHandler>().tileMap){
+            while (new_level == _currentMap){
                 new_level = this.pickRandomRoom();
             }
-            if (scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().usedExit.GetComponent<Exit>().thisExit == exitType.Left){
+            if (_currentMap.GetComponent<Room>().usedExit == exitType.Left){
                 // We exit stage left. Spawn a room to the left, pan to it, and then set the current room to that room
                 // Instantiate the next level far away from the left
-                var _currentNextMap = Instantiate(scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel, leftMost+new Vector3(-15, 0,0), Quaternion.identity);
-                leftMost = leftMost+new Vector3(-15, 0,0);
+                Debug.LogError("DOING LEFT");
+                var _currentNextMap = Instantiate(_nextMap, leftMost+new Vector3(-movement, 0,0), Quaternion.identity) as GameObject;
+                this._currentMap.GetComponent<Room>().roomController = this.gameObject;
+                _nextMap = _currentNextMap;
+                this._nextMap.GetComponent<Room>().roomController = this.gameObject;
+                leftMost = leftMost+new Vector3(-movement, 0,0);
                 rightMost = leftMost;
                 downMost = leftMost;
                 mainCamera.GetComponent<CameraController>().targetLocation = _currentNextMap.transform;
-                scene.GetComponent<SceneHandler>().tileMap = _currentNextMap;
-                //var next_level_exit = scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel.transform.position;
+                this._currentMap.GetComponent<Room>().assignExits();
+                //var next_level_exit = _nextMap.transform.position;
                 //Destroy(_currentMap);
 
             }
-            else if (scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().usedExit.GetComponent<Exit>().thisExit == exitType.Right){
-                var _currentNextMap = Instantiate(scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel, rightMost+new Vector3(15, 0,0), Quaternion.identity);
-                rightMost = rightMost+new Vector3(15, 0,0);
+            else if (_currentMap.GetComponent<Room>().usedExit == exitType.Right){
+                var _currentNextMap = Instantiate(_nextMap, rightMost+new Vector3(movement, 0,0), Quaternion.identity) as GameObject;
+                _nextMap = _currentNextMap;
+                rightMost = rightMost+new Vector3(movement, 0,0);
                 leftMost = rightMost;
                 downMost = rightMost;
+                Debug.LogError("DOING RIGHT");
                 mainCamera.GetComponent<CameraController>().targetLocation = _currentNextMap.transform;
-                scene.GetComponent<SceneHandler>().tileMap = _currentNextMap;
-                //var next_level_exit = scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel.transform.position;
+                this._nextMap.GetComponent<Room>().roomController = this.gameObject;
+                this._currentMap.GetComponent<Room>().assignExits();
+                //var next_level_exit = _nextMap.transform.position;
 
             }
-            else if (scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().usedExit.GetComponent<Exit>().thisExit == exitType.Down){
-                var _currentNextMap = Instantiate(scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel, downMost+new Vector3(0, -10,0), Quaternion.identity);
+            else if (_currentMap.GetComponent<Room>().usedExit == exitType.Down){
+                var _currentNextMap = Instantiate(_nextMap, downMost+new Vector3(0, -(movement-5),0), Quaternion.identity) as GameObject;
+                _nextMap = _currentNextMap;
                 mainCamera.GetComponent<CameraController>().targetLocation = _currentNextMap.transform;
-                downMost = downMost+new Vector3(0, -10,0);
+                this._nextMap.GetComponent<Room>().roomController = this.gameObject;
+
+                downMost = downMost+new Vector3(0, -(movement-5),0);
                 rightMost = downMost;
                 leftMost = downMost;
-                scene.GetComponent<SceneHandler>().tileMap = _currentNextMap;
-                //var next_level_exit = scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel.transform.position;
+                Debug.LogError("DOING DOWN");
+                this._currentMap.GetComponent<Room>().assignExits();
+                //var next_level_exit = _nextMap.transform.position;
             }
             else{
                 Debug.Log("test");
             }
-            //_currentMap = GameObject.Instantiate(scene.GetComponent<SceneHandler>().tileMap);
-            //scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel = new_level;
+            //_currentMap = GameObject.Instantiate(_currentMap);
+            //_nextMap = new_level;
         }
         else{
                 Debug.Log("Something is borked");
             }
+    }
+    public void movePlayer(){
+       var t = _currentMap.transform.GetChild(0).transform.Find("Spawn");
+       Debug.LogError($"Teleporint player, currently at {player.transform.position} to {t.position}");
+       player.transform.position = t.position;
+    }
+    public void setNextRoomLevel(){
+        this._nextMap.GetComponent<Room>().roomController = this.gameObject;
     }
     GameObject pickRandomRoom(){
         if (_LoadedRooms.Count == 0){
