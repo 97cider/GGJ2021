@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private float _projectileDuration;
 
+    [SerializeField] private float _fireRate;
+
     [SerializeField] private bool _forceOrientation;
 
     [SerializeField] private Vector2 _overrideOrientation;
@@ -33,6 +35,11 @@ public class Weapon : MonoBehaviour
         return this._weaponName;
     }
 
+    public float GetWeaponCooldown()
+    {
+        return this._fireRate;
+    }
+
     public virtual void Attack(Vector3 origin, Vector2 orientation) 
     {
         if (isProjectileWeapon) 
@@ -46,7 +53,9 @@ public class Weapon : MonoBehaviour
             }
             else
             {
-                proj.direction = orientation.x * _overrideOrientation;
+                float xDir = orientation.x * _overrideOrientation.x;
+                float yDir = _overrideOrientation.y;
+                proj.direction = new Vector2(xDir, yDir);
             }
             proj.damage = _weaponDamage;
             if (_projectileDuration > 0.0f)

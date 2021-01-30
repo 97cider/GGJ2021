@@ -25,6 +25,30 @@ public class CharacterController2D : MonoBehaviour
     private float startingGravScale = 1.0f;
     private bool jumpInput = false;
 
+    [Header("Animations")]
+    [SerializeField] private string walkAnimationName; 
+
+    [SerializeField] private string jumpAnimationName;
+
+    [SerializeField] private string idleAnimationName;
+
+    [SerializeField] private string fallAnimationName;
+
+    [SerializeField] private string attackAnimationName;
+
+    [SerializeField] private Animator Animator;
+
+    [SerializeField] private GameObject CharacterSprite;
+
+    [SerializeField] private GameObject ShootPoint;
+
+    [Header("Jumping")]
+    
+    [SerializeField] private float jumpDelay;
+    private float _currentJumpDelay;
+    private bool jumpReady = false;
+    private bool jumpTriggered = false;
+
     [Header("Events")]
     [Space]
 
@@ -51,9 +75,53 @@ public class CharacterController2D : MonoBehaviour
         Debug.Log("Available jumps: " + availableJumps);
 
         Move(horizontalInput * horizontalMovementSpeed);
-        Jump(jumpInput);
+        if (jumpInput && availableJumps > 0)
+        {
+             Animator.Play(jumpAnimationName);
+            _currentJumpDelay = jumpDelay;
+            jumpReady = false;
+            jumpTriggered = true;
+        }
+
+        if (!jumpReady)
+        {
+            _currentJumpDelay -= Time.deltaTime;
+            if (_currentJumpDelay <= 0) 
+            {
+                jumpReady = true;
+            }
+        }
+        if (jumpReady && jumpTriggered) 
+        {
+            Jump(true);
+            jumpReady = false;
+            jumpTriggered = false;
+        }
+        if (horizontalInput != 0 && m_Grounded) 
+        {
+           Animator.Play(walkAnimationName);
+        }
+        if (!m_Grounded)
+        {
+            if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName))
+            {
+                Animator.Play(fallAnimationName);
+            }
+        }
+        if(m_Grounded && horizontalInput == 0) 
+        {
+            if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName))
+            {
+                Animator.Play(idleAnimationName);
+            }
+        }
         CheckDownwardTrajectory();
         
+    }
+
+    bool AnimatorIsPlaying(string stateName)
+    {
+        return Animator.GetCurrentAnimatorStateInfo(0).IsName(stateName);
     }
 
     private void FixedUpdate()
@@ -132,6 +200,7 @@ public class CharacterController2D : MonoBehaviour
         Vector2 newVelVec = m_Rigidbody2D.velocity;
         newVelVec.y = 0.0f;
         m_Rigidbody2D.velocity = newVelVec;
+        m_Rigidbody2D.gravityScale = startingGravScale;
     }
 
     //Yea this is probably completely unneeded but I was 
@@ -159,8 +228,12 @@ public class CharacterController2D : MonoBehaviour
         m_FacingRight = !m_FacingRight;
 
         // Multiply the player's x local scale by -1.
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        Vector3 shootPointPosition = ShootPoint.transform.localPosition;
+        shootPointPosition.x *= -1;
+        ShootPoint.transform.localPosition = shootPointPosition;
+
+        Vector3 spriteScale = CharacterSprite.transform.localScale;
+        spriteScale.x *= -1;
+        CharacterSprite.transform.localScale = spriteScale;
     }
 }
