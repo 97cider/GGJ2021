@@ -5999,6 +5999,7 @@ MonoBehaviour:
   jumpAnimationName: MC_JUMP
   idleAnimationName: MC_IDLE
   fallAnimationName: MC_FALL
+  attackAnimationName: MC_ATTACK
   Animator: {fileID: 939935971}
   CharacterSprite: {fileID: 939935970}
   ShootPoint: {fileID: 441514105}
@@ -6075,6 +6076,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileOrigin: {fileID: 441514106}
   weaponCooldown: 0
+  Animator: {fileID: 939935971}
+  AttackAnimName: MC_ATTACK
 --- !u!114 &774259809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7892,6 +7895,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileOrigin: {fileID: 392389372}
   weaponCooldown: 0
+  Animator: {fileID: 0}
+  AttackAnimName: 
 --- !u!1 &1197638386
 GameObject:
   m_ObjectHideFlags: 0
@@ -11636,11 +11641,11 @@ MonoBehaviour:
   _weaponDescription: These Shrimp Fresh
   _weaponDamage: 10
   isProjectileWeapon: 1
-  _projectilePrefab: {fileID: 390746410994471061, guid: 975b3fa3c3806ac48b513099d1bf6dcd,
+  _projectilePrefab: {fileID: 5698935189646372714, guid: 7a6ed32bc265b8a4590983f51df5bd0b,
     type: 3}
   _projectileSpeed: 30
-  _projectileDuration: 3
-  _fireRate: 0.3
+  _projectileDuration: 0.3
+  _fireRate: 0.8
   _forceOrientation: 1
   _overrideOrientation: {x: 0.2, y: 0.5}
 --- !u!4 &1813062232
