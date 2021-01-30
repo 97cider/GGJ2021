@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: EnemyMarker
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: 6478468677427506316, guid: 7704670b1125c5e4c99dfa003a854455,
+    type: 3}
+  m_DefaultGameObject: {fileID: 6568816373824552928, guid: d87485678059ca548b042e85561b86e2,
+    type: 3}
+  m_DefaultColliderType: 0
+  m_TilingRules: []

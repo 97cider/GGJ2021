@@ -98,6 +98,9 @@ TextureImporter:
   - first:
       213: 4030010799571653662
     second: environment-spritesheet_31
+  - first:
+      213: 6478468677427506316
+    second: environment-spritesheet_32
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -128,7 +131,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -866,6 +869,27 @@ TextureImporter:
       bones: []
       spriteID: e14d47568797de730800000000000000
       internalID: 4030010799571653662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment-spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8caf8e00f428e950800000000000000
+      internalID: 6478468677427506316
       vertices: []
       indices: 
       edges: []
