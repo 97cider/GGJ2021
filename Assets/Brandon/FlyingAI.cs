@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingAI : MonoBehaviour
+public abstract class FlyingAI : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] protected GameObject player;
 
-    enum State { Idle, MoveTowards, Attack}
+    protected enum State { Idle, MoveTowards, Attack}
 
-    private State aiState;
-    private bool inAction;
+    protected State aiState;
+    protected bool inAction;
 
     private Vector2 direction;
 
@@ -18,12 +18,10 @@ public class FlyingAI : MonoBehaviour
     [SerializeField] private float idleTime;
     [SerializeField] private float moveTime;
 
-    public GameObject _projectilePrefab;
-    public Transform projectileOrigin;
-
     // Start is called before the first frame update
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         aiState = State.Idle;
         inAction = false;
         direction = new Vector2(1, 0);
@@ -150,29 +148,7 @@ public class FlyingAI : MonoBehaviour
         inAction = false;
     }
 
-    IEnumerator Attack()
-    {
-        DoAttack();
-        inAction = false;
-        yield break;
-    }
-
-    protected virtual void DoAttack()
-    {
-        GameObject boolet = GameObject.Instantiate(_projectilePrefab, projectileOrigin.position, Quaternion.identity);
-        EnemyProjectile proj = boolet.GetComponent<EnemyProjectile>();
-
-        proj.speed = 5.0f;
-        proj.damage = 2.0f;
-        proj.hasDuration = true;
-        proj.duration = 3.0f;
-        proj.pierceTargets = false;
-        proj.pierceWalls = true;
-        proj.direction = player.transform.position - proj.transform.position;
-        proj.direction.Normalize();
-        
-        //proj.OnShoot(); ...what does this do..?
-    }
+    protected abstract IEnumerator Attack();
 
     protected virtual void MoveTowards(Transform towards)
     {
@@ -191,7 +167,7 @@ public class FlyingAI : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, towards.position, Time.deltaTime * enemySpeed);
     }
 
-    private bool IsCloseToPlayer()
+    protected bool IsCloseToPlayer()
     {
         bool closeToPlayer = false;
 
