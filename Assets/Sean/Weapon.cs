@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    public Sprite weaponSprite;
     [SerializeField] private string _weaponName;
 
     [SerializeField] private string _weaponDescription;

@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d2f1db5ca440545ae669cace10888d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSprite: {fileID: -1315175341226311843, guid: 107fadb4990a6d44285a2ce248894947,
+    type: 3}
   _weaponName: Stone Sward
   _weaponDescription: sward
   _weaponDamage: 1

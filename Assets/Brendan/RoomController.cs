@@ -11,8 +11,7 @@ public class RoomController : MonoBehaviour
     public Camera mainCamera;
     private Vector3 leftMost, rightMost, downMost;
     public List<GameObject> _LoadedRooms;
-    
-    public Canvas runStartUi;
+    public UiController uiController;
     public GameObject player;
     public ItemController itemController;
     public int movement;
@@ -41,7 +40,8 @@ public class RoomController : MonoBehaviour
             player.GetComponent<PlayerStats>().setCurrentAccessory(a);
             player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
 
-
+            uiController.player = player;
+            
             // Show the current accessory in the 
         }
         leftMost = new Vector3(0,0,zoffset);
