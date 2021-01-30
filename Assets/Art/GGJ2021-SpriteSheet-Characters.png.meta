@@ -86,6 +86,18 @@ TextureImporter:
   - first:
       213: -7878910005268077663
     second: GGJ2021-SpriteSheet-Characters_30
+  - first:
+      213: 5255389221109842655
+    second: GGJ2021-SpriteSheet-Characters_31
+  - first:
+      213: 127899807511236547
+    second: GGJ2021-SpriteSheet-Characters_32
+  - first:
+      213: 36461533941106558
+    second: GGJ2021-SpriteSheet-Characters_33
+  - first:
+      213: -6777103372198890260
+    second: GGJ2021-SpriteSheet-Characters_34
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -833,6 +845,90 @@ TextureImporter:
       bones: []
       spriteID: 1a3a9be281d78a290800000000000000
       internalID: -7878910005268077663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GGJ2021-SpriteSheet-Characters_31
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 176
+        width: 20
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd24ba007a4eee840800000000000000
+      internalID: 5255389221109842655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GGJ2021-SpriteSheet-Characters_32
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 176
+        width: 20
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf4c81823466c100800000000000000
+      internalID: 127899807511236547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GGJ2021-SpriteSheet-Characters_33
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 176
+        width: 20
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e77868a6299818000800000000000000
+      internalID: 36461533941106558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GGJ2021-SpriteSheet-Characters_34
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 176
+        width: 20
+        height: 35
+      alignment: 9
+      pivot: {x: 0.5, y: 0.45714286}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4bbfdb364e2f1a0800000000000000
+      internalID: -6777103372198890260
       vertices: []
       indices: 
       edges: []

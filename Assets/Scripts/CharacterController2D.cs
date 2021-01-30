@@ -38,6 +38,8 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField] private string attackAnimationName;
 
+    [SerializeField] private string landAnimationName;
+
     [SerializeField] private Animator Animator;
 
     [SerializeField] private GameObject CharacterSprite;
@@ -111,18 +113,18 @@ public class CharacterController2D : MonoBehaviour
         }
         if (!m_Grounded)
         {
-            if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName))
+            if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName) && !AnimatorIsPlaying(landAnimationName))
             {
                 Animator.Play(fallAnimationName);
             }
         }
-        if(m_Grounded && horizontalInput == 0) 
-        {
-            if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName))
-            {
-                Animator.Play(idleAnimationName);
-            }
-        }
+        // if(m_Grounded && horizontalInput == 0) 
+        // {
+        //     if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName) && !AnimatorIsPlaying(landAnimationName))
+        //     {
+        //         Animator.Play(idleAnimationName);
+        //     }
+        // }
         CheckDownwardTrajectory();
         
     }
@@ -152,7 +154,11 @@ public class CharacterController2D : MonoBehaviour
                 }
 
                 if (!wasGrounded)
+                {
                     OnLandEvent.Invoke();
+                    Debug.Log("Playing a land animation");
+                    Animator.Play(landAnimationName);
+                }
             }
         }
     }

@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &401447875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8491463938849043012, guid: fa59b52d5550e2a42a224a9c6f5e3182,
+    type: 3}
+  m_PrefabInstance: {fileID: 1267444777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1267444777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -194,6 +200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_inAirModifier
       value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491463938612068090, guid: fa59b52d5550e2a42a224a9c6f5e3182,
+        type: 3}
+      propertyPath: landAnimationName
+      value: MC_LAND
       objectReference: {fileID: 0}
     - target: {fileID: 8491463938612068090, guid: fa59b52d5550e2a42a224a9c6f5e3182,
         type: 3}
@@ -280,6 +291,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8491463938849043010, guid: fa59b52d5550e2a42a224a9c6f5e3182,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5258593503977629776, guid: 107fadb4990a6d44285a2ce248894947,
+        type: 3}
     - target: {fileID: 8491463938849043010, guid: fa59b52d5550e2a42a224a9c6f5e3182,
         type: 3}
       propertyPath: m_SortingOrder
@@ -4418,7 +4435,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  shakeCameraOnJump: 1
+  characterSprite: {fileID: 401447875}
+  shakeCameraOnJump: 0
+  shakeCameraOnLand: 1
 --- !u!4 &1632300746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8491463938612068088, guid: fa59b52d5550e2a42a224a9c6f5e3182,
