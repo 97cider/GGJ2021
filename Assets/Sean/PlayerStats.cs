@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerStats : MonoBehaviour
 {
+
+    public bool canMove;
     [SerializeField] private float _currentHealth;
     [SerializeField] private float _maxHealth;
 
@@ -13,7 +16,11 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Weapon _currentWeapon;
 
-    [SerializeField] private Item _currentItem;
+    
+    private int _completedLevels;
+    private int _completedRuns;
+
+    [SerializeField] private Accessory _currentAccessory;
 
     [SerializeField] private Vector2 _orientation;
 
@@ -24,12 +31,22 @@ public class PlayerStats : MonoBehaviour
     {
         _effects = this.GetComponent<PlayerEffectsController>();
     }
+    public void Start()
+    {
+        // Modify properties based on current accessory
+        this._maxHealth = _currentAccessory.maxJumpScalar;
+        var w = GetWeapon();
+        w.modifyWeaponStats(this._currentAccessory);
+
+    }
 
     public Weapon GetWeapon()
     {
         return this._currentWeapon;
     }
-
+    public void changeMove(){
+        this.canMove = !this.canMove;
+    }
     public Vector2 GetOrientation()
     {
         return this._orientation;
@@ -46,6 +63,14 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public Accessory getCurrentAccessory()
+    {
+        return _currentAccessory;
+    }
+    public void setCurrentAccessory( Accessory a)
+    {
+        _currentAccessory = a;
+    }
     public void Die()
     {
         StopAllCoroutines();

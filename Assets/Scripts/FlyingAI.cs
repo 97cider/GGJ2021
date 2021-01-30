@@ -166,7 +166,8 @@ public class FlyingAI : MonoBehaviour
         proj.damage = 2.0f;
         proj.hasDuration = true;
         proj.duration = 3.0f;
-        proj.pierceTargets = true;
+        proj.pierceTargets = false;
+        proj.pierceWalls = true;
         proj.direction = player.transform.position - proj.transform.position;
         proj.direction.Normalize();
         

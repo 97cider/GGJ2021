@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-
 public class CharacterController2D : MonoBehaviour
 {
     [SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
@@ -15,12 +14,13 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField] private float m_inAirModifier = 2;
 
+    public PlayerStats playerstats;
     const float k_GroundedRadius = .05f; // Radius of the overlap circle to determine if grounded
     [SerializeField] private bool m_Grounded = false;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
-    private Rigidbody2D m_Rigidbody2D;
+    public Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-    private Vector3 m_Velocity = Vector3.zero;
+    public Vector3 m_Velocity = Vector3.zero;
 
     [SerializeField] private int availableJumps = 2;
     private float horizontalInput = 0.0f;
@@ -64,6 +64,15 @@ public class CharacterController2D : MonoBehaviour
 
     private void Awake()
     {
+        playerstats = this.GetComponent<PlayerStats>();
+        playerstats.canMove = true;
+
+        Accessory ca = playerstats.getCurrentAccessory();
+
+        //Apply movment based effects from playerstats to the character controller
+        m_JumpForce = m_JumpForce * ca.jumpSpeedModifier;
+        horizontalMovementSpeed =  horizontalMovementSpeed * ca.movementSpeedModifier;
+        maxJumps = maxJumps + ca.maxJumpScalar;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         startingGravScale = m_Rigidbody2D.gravityScale;
         effectsController = this.GetComponent<PlayerEffectsController>();
@@ -76,56 +85,58 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        jumpInput = Input.GetButtonDown("Jump");
+        if (playerstats.canMove){
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            jumpInput = Input.GetButtonDown("Jump");
 
-        // Debug.Log("Horizontal input: " + horizontalInput);
-        // Debug.Log("Vertical input: " + jumpInput);
-        // Debug.Log("Available jumps: " + availableJumps);
+            // Debug.Log("Horizontal input: " + horizontalInput);
+            // Debug.Log("Vertical input: " + jumpInput);
+            // Debug.Log("Available jumps: " + availableJumps);
 
-        Move(horizontalInput * horizontalMovementSpeed);
-        if (jumpInput && availableJumps > 0)
-        {
-             Animator.Play(jumpAnimationName);
-            _currentJumpDelay = jumpDelay;
-            jumpReady = false;
-            jumpTriggered = true;
-        }
-
-        if (!jumpReady)
-        {
-            _currentJumpDelay -= Time.deltaTime;
-            if (_currentJumpDelay <= 0) 
+            Move(horizontalInput * horizontalMovementSpeed);
+            if (jumpInput && availableJumps > 0)
             {
-                jumpReady = true;
+                Animator.Play(jumpAnimationName);
+                _currentJumpDelay = jumpDelay;
+                jumpReady = false;
+                jumpTriggered = true;
             }
-        }
-        if (jumpReady && jumpTriggered) 
-        {
-            Jump(true);
-            effectsController.ShakeCameraOnJump();
-            jumpReady = false;
-            jumpTriggered = false;
-        }
-        if (horizontalInput != 0 && m_Grounded) 
-        {
-           Animator.Play(walkAnimationName);
-        }
-        if (!m_Grounded)
-        {
-            if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName) && !AnimatorIsPlaying(landAnimationName))
+
+            if (!jumpReady)
             {
-                Animator.Play(fallAnimationName);
+                _currentJumpDelay -= Time.deltaTime;
+                if (_currentJumpDelay <= 0) 
+                {
+                    jumpReady = true;
+                }
             }
+            if (jumpReady && jumpTriggered) 
+            {
+                Jump(true);
+                effectsController.ShakeCameraOnJump();
+                jumpReady = false;
+                jumpTriggered = false;
+            }
+            if (horizontalInput != 0 && m_Grounded) 
+            {
+            Animator.Play(walkAnimationName);
+            }
+            if (!m_Grounded)
+            {
+                if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName) && !AnimatorIsPlaying(landAnimationName))
+                {
+                    Animator.Play(fallAnimationName);
+                }
+            }
+            // if(m_Grounded && horizontalInput == 0) 
+            // {
+            //     if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName) && !AnimatorIsPlaying(landAnimationName))
+            //     {
+            //         Animator.Play(idleAnimationName);
+            //     }
+            // }
+            CheckDownwardTrajectory();
         }
-        // if(m_Grounded && horizontalInput == 0) 
-        // {
-        //     if(!AnimatorIsPlaying(jumpAnimationName) && !AnimatorIsPlaying(attackAnimationName) && !AnimatorIsPlaying(landAnimationName))
-        //     {
-        //         Animator.Play(idleAnimationName);
-        //     }
-        // }
-        CheckDownwardTrajectory();
         
     }
 
@@ -234,6 +245,7 @@ public class CharacterController2D : MonoBehaviour
     {
         availableJumps = maxJumps;
         m_Rigidbody2D.gravityScale = startingGravScale;
+        m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0.0f);
     }
 
     private void CheckDownwardTrajectory()
@@ -246,7 +258,6 @@ public class CharacterController2D : MonoBehaviour
             m_Rigidbody2D.gravityScale = Mathf.Clamp(m_Rigidbody2D.gravityScale, startingGravScale, maxGravityScale);
         }
     }
-
     private void Flip()
     {
         // Switch the way the player is labelled as facing.
