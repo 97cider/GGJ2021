@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44658786, g: 0.49642265, b: 0.57482505, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -475,8 +475,8 @@ MonoBehaviour:
   _scene: {fileID: 59778914}
   _nextMap: {fileID: 0}
   _LoadedRooms:
-  - {fileID: 883961153558511260, guid: 1af019ec9de57da93a89e6eb7bedcdb2, type: 3}
-  - {fileID: 3625967198270766779, guid: 3b4e7143578339a9d8feb7be9f31d828, type: 3}
+  - {fileID: 8195828033090864749, guid: 1af019ec9de57da93a89e6eb7bedcdb2, type: 3}
+  - {fileID: 5181248937944083412, guid: 3b4e7143578339a9d8feb7be9f31d828, type: 3}
 --- !u!4 &593477016
 Transform:
   m_ObjectHideFlags: 0
