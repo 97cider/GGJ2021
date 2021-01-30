@@ -68,11 +68,16 @@ public class CharacterController2D : MonoBehaviour
         playerstats.canMove = true;
 
         Accessory ca = playerstats.getCurrentAccessory();
+        
+        if(ca != null)
+        {
+            m_JumpForce = m_JumpForce * ca.jumpSpeedModifier;
+            horizontalMovementSpeed =  horizontalMovementSpeed * ca.movementSpeedModifier;
+            maxJumps = maxJumps + ca.maxJumpScalar;
+        }
 
         //Apply movment based effects from playerstats to the character controller
-        m_JumpForce = m_JumpForce * ca.jumpSpeedModifier;
-        horizontalMovementSpeed =  horizontalMovementSpeed * ca.movementSpeedModifier;
-        maxJumps = maxJumps + ca.maxJumpScalar;
+
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         startingGravScale = m_Rigidbody2D.gravityScale;
         effectsController = this.GetComponent<PlayerEffectsController>();

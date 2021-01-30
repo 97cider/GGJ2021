@@ -19,9 +19,12 @@ public class PlayerCombat : MonoBehaviour
 
     [SerializeField] private string AttackAnimName;
 
+    private PlayerEffectsController _effects;
+
     void Awake () 
     {
         _player = this.GetComponent<PlayerStats>();
+        _effects = this.GetComponent<PlayerEffectsController>();
         weaponCooldown = maxCooldown;
     }
 
@@ -48,6 +51,7 @@ public class PlayerCombat : MonoBehaviour
                 if (weaponCooldown <= 0.0f)
                 {
                     Animator.Play(AttackAnimName);
+                    _effects.ShakeCameraOnAttack();
                     weaponCooldown = maxCooldown;
                     print("Hey we attacked with " + this._currentWeapon.GetWeaponName());
                     Vector2 orientation = new Vector2(this._projectileOrigin.localPosition.x / Mathf.Abs(this._projectileOrigin.localPosition.x), 0.0f);

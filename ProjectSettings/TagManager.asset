@@ -15,8 +15,8 @@ TagManager:
   - Player
   - Projectile
   - Enemy
-  - 
-  - 
+  - EnemyBoundary
+  - EnemyProjectile
   - 
   - 
   - 

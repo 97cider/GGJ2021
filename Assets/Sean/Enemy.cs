@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected float _enemyMaxHealth;
 
+    [SerializeField] protected float _enemyContactDamage;
+
     public UnityEvent DieEvents;
 
     protected virtual void Awake() 
