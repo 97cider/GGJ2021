@@ -167,6 +167,8 @@ public class FlyingAI : MonoBehaviour
         proj.hasDuration = true;
         proj.duration = 3.0f;
         proj.pierceTargets = true;
+        proj.direction = player.transform.position - proj.transform.position;
+        proj.direction.Normalize();
         
         //proj.OnShoot(); ...what does this do..?
     }

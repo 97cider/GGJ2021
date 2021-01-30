@@ -46,7 +46,7 @@ public class EnemyProjectile : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    protected virtual void Update()
+    void Update()
     {
         Vector2 target = direction * speed * Time.deltaTime;
         this.transform.position += new Vector3(target.x, target.y, 0.0f);
