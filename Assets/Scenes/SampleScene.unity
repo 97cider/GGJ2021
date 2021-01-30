@@ -476,8 +476,9 @@ MonoBehaviour:
   _exitTest: {fileID: 0}
   mainCamera: {fileID: 963194227}
   _LoadedRooms:
-  - {fileID: 8195828033090864749, guid: 1af019ec9de57da93a89e6eb7bedcdb2, type: 3}
-  - {fileID: 5181248937944083412, guid: 3b4e7143578339a9d8feb7be9f31d828, type: 3}
+  - {fileID: 7012441744072642149, guid: e481ca73ef760164bbefb5a54e941069, type: 3}
+  - {fileID: 4042767750622739636, guid: e77d0217782076a46964ca7f75c66ecc, type: 3}
+  player: {fileID: 1496822353356547931, guid: c45ac34cf197f6048824368292e06916, type: 3}
 --- !u!4 &593477016
 Transform:
   m_ObjectHideFlags: 0
@@ -663,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -681,6 +682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8284ad0405ba444bb4e14b3e4dc71d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _roomController: {fileID: 593477014}
   targetLocation: {fileID: 0}
   hasReachedDest: 0
   moveAwayFrom: {fileID: 0}

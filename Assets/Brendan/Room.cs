@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Exit;
-using static RoomController;
+using static Helper;
 public class Room : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -11,7 +11,8 @@ public class Room : MonoBehaviour
     public List<GameObject> availableExits;
     public GameObject nextLevel;
     public List<GameObject> enemies;
-    public GameObject usedExit;
+    public exitType usedExit;
+    public GameObject roomController;
     public bool isCleared;
     void Start()
     {
@@ -22,6 +23,16 @@ public class Room : MonoBehaviour
         }
         else {
             isCleared = false;
+        }
+        // Set the all the exits to have the current Room controller.
+        //GameObject[] lgs = GameObject.FindGameObjectsWithTag("Exit");
+        assignExits();
+    }
+    public void assignExits(){
+        foreach(Transform child in transform.GetChild(0)){
+            if(child.tag == "Exit"){
+                child.GetComponent<Exit>().room = this.gameObject;
+            }
         }
     }
     void onClear(){
