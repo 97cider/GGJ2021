@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 8491463938612068095}
   - component: {fileID: 8491463938612068038}
   - component: {fileID: 8491463938612068091}
+  - component: {fileID: 1632300739}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -164,6 +165,7 @@ MonoBehaviour:
   maxGravityScale: 9
   addedGrav: 5
   maxJumps: 2
+  m_inAirModifier: 0.75
   m_Grounded: 0
   availableJumps: 2
   walkAnimationName: MC_WALK
@@ -171,9 +173,12 @@ MonoBehaviour:
   idleAnimationName: MC_IDLE
   fallAnimationName: MC_FALL
   attackAnimationName: MC_ATTACK
+  landAnimationName: MC_LAND
   Animator: {fileID: 8491463938849043013}
   CharacterSprite: {fileID: 8491463938849043012}
   ShootPoint: {fileID: 8491463938283946719}
+  effectsController: {fileID: 0}
+  heavyLandVelocityThreshold: -10
   jumpDelay: 0.15
   OnLandEvent:
     m_PersistentCalls:
@@ -188,6 +193,21 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: These shrimp fresh
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHeavyLandEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1632300739}
+        m_TargetAssemblyTypeName: PlayerEffectsController, Assembly-CSharp
+        m_MethodName: ShakeCameraOnLand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!58 &8491463938612068093
@@ -285,6 +305,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4033917, y: 0.85}
   m_EdgeRadius: 0
+--- !u!114 &1632300739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8491463938612068094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99fe4edb7337f5d4da13a660ca4fb119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  characterSprite: {fileID: 8491463938849043012}
+  shakeCameraOnJump: 0
+  shakeCameraOnLand: 1
 --- !u!1 &8491463938849043012
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +393,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 36
   m_Sprite: {fileID: -5258593503977629776, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -459,7 +495,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 36
   m_Sprite: {fileID: 8971264534927417129, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
