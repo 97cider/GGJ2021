@@ -25,6 +25,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private Vector2 _orientation;
 
     [SerializeField] private SpriteRenderer _renderer;
+
+    [SerializeField] private SpriteRenderer _weaponRenderer;
     private PlayerEffectsController _effects;
 
     void Awake()
@@ -39,13 +41,25 @@ public class PlayerStats : MonoBehaviour
         }
         // Modify properties based on current accessory
         var w = GetWeapon();
-        w.modifyWeaponStats(this._currentAccessory);
+        this.EquipWeapon(w);
 
     }
 
     public Weapon GetWeapon()
     {
         return this._currentWeapon;
+    }
+
+    public void EquipWeapon(Weapon w)
+    {
+        if (this._currentAccessory)
+        {
+            w.modifyWeaponStats(this._currentAccessory);
+        }
+
+        _weaponRenderer.sprite = w.weaponSprite;
+
+        this._currentWeapon = w;
     }
     public void changeMove(){
         this.canMove = !this.canMove;
