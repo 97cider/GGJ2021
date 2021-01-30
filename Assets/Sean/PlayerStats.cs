@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class PlayerStats : MonoBehaviour
 {
+
+    public bool canMove;
     [SerializeField] private float _currentHealth;
     [SerializeField] private float _maxHealth;
 
@@ -24,7 +26,9 @@ public class PlayerStats : MonoBehaviour
     {
         return this._currentWeapon;
     }
-
+    public void changeMove(){
+        this.canMove = !this.canMove;
+    }
     public Vector2 GetOrientation()
     {
         return this._orientation;

@@ -24,15 +24,23 @@ public class CameraController : MonoBehaviour
             {
                 Debug.Log("not there yet");
                 var tmpvect = new Vector3(targetLocation.position.x, targetLocation.position.y, this.transform.position.z);
-                this.transform.position = Vector3.MoveTowards(this.transform.position, tmpvect, speed*Time.deltaTime);    
+                this.transform.position = Vector3.MoveTowards(this.transform.position, tmpvect, speed*Time.deltaTime);
+                _roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.velocity = new Vector2(0,0); 
+                _roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
             else{
                 // the target destination has been reached
                 Debug.Log("has reached target");
                 hasReachedDest = true;
                 _roomController.GetComponent<RoomController>().destroyRoom();
-                _roomController.GetComponent<RoomController>()._currentMap =   _roomController.GetComponent<RoomController>().scene.GetComponent<SceneHandler>().tileMap;
+                _roomController.GetComponent<RoomController>()._currentMap = _roomController.GetComponent<RoomController>()._nextMap;
+                Debug.LogError(_roomController.GetComponent<RoomController>()._currentMap);
                 _roomController.GetComponent<RoomController>().setNextLevel();
+                _roomController.GetComponent<RoomController>().movePlayer();
+                _roomController.GetComponent<RoomController>().player.GetComponent<PlayerStats>().canMove = true;
+                _roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                //_roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                //_roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.velocity = new Vector2(0,0);
                 //var next_level = _roomController.GetComponent<RoomController>().setNextLevel();
                 //_roomController.scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel = next_level;
                 targetLocation = null;

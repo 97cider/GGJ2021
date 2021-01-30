@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04064f8f85ee71b49b1a09fa898cab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 0
   _currentHealth: 100
   _maxHealth: 100
   _movementSpeed: 10
@@ -142,6 +143,9 @@ MonoBehaviour:
   _currentWeapon: {fileID: 0}
   _currentItem: {fileID: 0}
   _orientation: {x: 0, y: 0}
+  PlayerDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8491463938612068090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +170,10 @@ MonoBehaviour:
   addedGrav: 5
   maxJumps: 2
   m_inAirModifier: 0.75
+  playerstats: {fileID: 0}
   m_Grounded: 0
+  m_Rigidbody2D: {fileID: 0}
+  m_Velocity: {x: 0, y: 0, z: 0}
   availableJumps: 2
   walkAnimationName: MC_WALK
   jumpAnimationName: MC_JUMP
