@@ -24,21 +24,6 @@ public class Room : MonoBehaviour
             isCleared = false;
         }
     }
-    public void moveToLevel(){
-        // This function takes in an exit as a parameter, and moves the camera away from the 
-        // the exit. Once the camera is sufficiently away, spawn in the new level.
-        
-        // for testing, just take in a door
-        var exit = usedExit;
-        var transform_of_door = exit.transform;
-        var typeOfDoor = exit.GetComponent<Exit>().thisExit;
-        if (typeOfDoor == exitType.Left){
-            // Spawn a new scene to the right
-            Instantiate(nextLevel, new Vector3(10, 0, 0), Quaternion.identity);
-
-            // Move 
-        }
-    }
     void onClear(){
     }
     // Update is called once per frame
