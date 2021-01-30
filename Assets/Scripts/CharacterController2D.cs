@@ -13,6 +13,8 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float addedGrav = 0.1f;                            // Grav scale units / sec
     [SerializeField] private int maxJumps = 2;
 
+    [SerializeField] private float m_inAirModifier = 2;
+
     const float k_GroundedRadius = .05f; // Radius of the overlap circle to determine if grounded
     [SerializeField] private bool m_Grounded = false;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -42,7 +44,10 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField] private GameObject ShootPoint;
 
+    [SerializeField] private PlayerEffectsController effectsController;
+
     [Header("Jumping")]
+    [SerializeField] private float heavyLandVelocityThreshold;
     
     [SerializeField] private float jumpDelay;
     private float _currentJumpDelay;
@@ -53,11 +58,13 @@ public class CharacterController2D : MonoBehaviour
     [Space]
 
     public UnityEvent OnLandEvent;
+    public UnityEvent OnHeavyLandEvent;
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         startingGravScale = m_Rigidbody2D.gravityScale;
+        effectsController = this.GetComponent<PlayerEffectsController>();
         availableJumps = maxJumps;
 
         if (OnLandEvent == null)
@@ -70,9 +77,9 @@ public class CharacterController2D : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         jumpInput = Input.GetButtonDown("Jump");
 
-        Debug.Log("Horizontal input: " + horizontalInput);
-        Debug.Log("Vertical input: " + jumpInput);
-        Debug.Log("Available jumps: " + availableJumps);
+        // Debug.Log("Horizontal input: " + horizontalInput);
+        // Debug.Log("Vertical input: " + jumpInput);
+        // Debug.Log("Available jumps: " + availableJumps);
 
         Move(horizontalInput * horizontalMovementSpeed);
         if (jumpInput && availableJumps > 0)
@@ -94,6 +101,7 @@ public class CharacterController2D : MonoBehaviour
         if (jumpReady && jumpTriggered) 
         {
             Jump(true);
+            effectsController.ShakeCameraOnJump();
             jumpReady = false;
             jumpTriggered = false;
         }
@@ -137,6 +145,11 @@ public class CharacterController2D : MonoBehaviour
             if (colliders[i].gameObject != gameObject)
             {
                 m_Grounded = true;
+                
+                if(m_Rigidbody2D.velocity.y > heavyLandVelocityThreshold && !wasGrounded)
+                {
+                    OnHeavyLandEvent.Invoke();
+                }
 
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
@@ -152,6 +165,12 @@ public class CharacterController2D : MonoBehaviour
         {
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+
+            if (!m_Grounded)
+            {
+                targetVelocity = new Vector2(targetVelocity.x * m_inAirModifier, targetVelocity.y);
+            }
+
             // And then smoothing it out and applying it to the character
             m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
