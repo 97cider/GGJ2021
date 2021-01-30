@@ -10,24 +10,34 @@ public class Room : MonoBehaviour
     //public enum Exits {Left, Right, Down}; 
     public List<GameObject> availableExits;
     public GameObject nextLevel;
-    public List<GameObject> enemies;
     public exitType usedExit;
     public GameObject roomController;
+    public List<GameObject> enemies;
     public bool isCleared;
+    void Update(){
+        if (isCleared){
+            playDoorOpeningAnimation();
+            openDoors();
+        }
+    }
     void Start()
     {
         // Load the next level.
         //nextLevel = RoomController.getNextLevel(this.parent);
         this.usedExit = exitType.None;
-        if (enemies.Count == 0){
-            isCleared = true;
-        }
-        else {
-            isCleared = false;
-        }
+        isCleared = false;
+        //uncomment when actually done
+        // if (enemies.Count == 0){
+        //     isCleared = true;
+        // }
+        // else {
+        //     isCleared = false;
+        // }
         // Set the all the exits to have the current Room controller.
         //GameObject[] lgs = GameObject.FindGameObjectsWithTag("Exit");
         assignExits();
+        playDoorIdle();
+
     }
     public void assignExits(){
         foreach(Transform child in transform.GetChild(0)){
@@ -36,11 +46,35 @@ public class Room : MonoBehaviour
             }
         }
     }
-    void onClear(){
+    public void playDoorIdle(){
+          foreach(Transform child in transform.GetChild(0)){
+            if(child.tag == "Exit"){
+                //child.GetComponent<Animation>().Play("MC_WALk");
+                child.GetChild(0).GetComponent<Animator>().Play("doorIdle");
+            }
+        }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void playDoorOpeningAnimation(){
+        foreach(Transform child in transform.GetChild(0)){
+            if(child.tag == "Exit"){
+                child.GetChild(0).GetComponent<Animator>().Play("unlockDoor2");
+            }
+        }
+    }
+    public void closeDoors(){
+        foreach(Transform child in transform.GetChild(0)){
+            if(child.tag == "Exit"){
+                child.GetComponent<Exit>().lockedDoor.enabled = true;
+            }
+        }
+    }
+    public void openDoors(){
+         foreach(Transform child in transform.GetChild(0)){
+            if(child.tag == "Exit"){
+                child.GetComponent<Exit>().lockedDoor.enabled = false;
+            }
+        }
+    }
+    void onClear(){
     }
 }

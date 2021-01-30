@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: thisExit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 340419820936932194, guid: f6b9b5df52156cf409a57592da250ce4,
+        type: 3}
+      propertyPath: lockedDoor
+      value: 
+      objectReference: {fileID: 5636242531301115836}
     - target: {fileID: 340419820936932195, guid: f6b9b5df52156cf409a57592da250ce4,
         type: 3}
       propertyPath: m_RootOrder
@@ -72,6 +77,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: rightExit
       objectReference: {fileID: 0}
+    - target: {fileID: 5200446671357359210, guid: f6b9b5df52156cf409a57592da250ce4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.0021853
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200446671357359210, guid: f6b9b5df52156cf409a57592da250ce4,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0010931492
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220335714797248848, guid: f6b9b5df52156cf409a57592da250ce4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.9353533
+      objectReference: {fileID: 0}
+    - target: {fileID: 8220335714797248848, guid: f6b9b5df52156cf409a57592da250ce4,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03232336
+      objectReference: {fileID: 0}
     - target: {fileID: 8220335714797248848, guid: f6b9b5df52156cf409a57592da250ce4,
         type: 3}
       propertyPath: m_IsTrigger
@@ -80,3 +105,9 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7483287053962223576, guid: f6b9b5df52156cf409a57592da250ce4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f6b9b5df52156cf409a57592da250ce4, type: 3}
+--- !u!61 &5636242531301115836 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 5200446671357359210, guid: f6b9b5df52156cf409a57592da250ce4,
+    type: 3}
+  m_PrefabInstance: {fileID: 440303870690259926}
+  m_PrefabAsset: {fileID: 0}
