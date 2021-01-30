@@ -14,16 +14,16 @@ public class FlyingCharge : FlyingAI
         Vector2 overshoot = normalizedX * overshootDistance;
 
         Vector2 endPoint = (Vector2)player.transform.position + overshoot;
-        Vector2 currentPoint = gameObject.transform.position;
+        Vector2 startPoint = gameObject.transform.position;
 
-        float timeSpentCharging = ((endPoint - currentPoint).magnitude) / chargeSpeed;
+        float timeSpentCharging = ((endPoint - startPoint).magnitude) / chargeSpeed;
 
         float t = 0.0f;
 
         while(t < 1)
         {
             t += Time.deltaTime / timeSpentCharging;
-            transform.position = Vector2.Lerp(transform.position, endPoint, t);
+            transform.position = Vector2.Lerp(startPoint, endPoint, t);
             yield return null;
         }
 
