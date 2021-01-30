@@ -43,11 +43,16 @@ public class Projectile : MonoBehaviour
             }
             return;
         }
-        if (other.gameObject.layer != LayerMask.NameToLayer("Default") && !pierceWalls)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Default") && !pierceWalls)
         {
             this.Dispose();
             return;
         }
+    }
+
+    public virtual void OnShoot()
+    {
+        // Do nothing for static moving projectiles
     }
 
     protected void Dispose() 
@@ -55,7 +60,7 @@ public class Projectile : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    void Update()
+    protected virtual void Update()
     {
         Vector2 target = direction * speed * Time.deltaTime;
         this.transform.position += new Vector3(target.x, target.y, 0.0f);

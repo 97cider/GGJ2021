@@ -18,6 +18,9 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private float _projectileDuration;
 
+    [SerializeField] private bool _forceOrientation;
+
+    [SerializeField] private Vector2 _overrideOrientation;
     private PlayerStats _player;
 
     public void EquipWeapon(PlayerStats player) 
@@ -37,13 +40,21 @@ public class Weapon : MonoBehaviour
             GameObject boolet = GameObject.Instantiate(_projectilePrefab, origin, Quaternion.identity);
             Projectile proj = boolet.GetComponent<Projectile>();
             proj.speed = _projectileSpeed;
-            proj.direction = orientation;
+            if (!_forceOrientation) 
+            {
+                proj.direction = orientation;
+            }
+            else
+            {
+                proj.direction = orientation.x * _overrideOrientation;
+            }
             proj.damage = _weaponDamage;
             if (_projectileDuration > 0.0f)
             {
                 proj.hasDuration = true;
                 proj.duration = _projectileDuration;
             }
+            proj.OnShoot();
         }
     }
 }
