@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44658786, g: 0.49642265, b: 0.57482505, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -471,12 +471,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0587ac476e983f2a5b4eb697ff24f750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tileMap: {fileID: 0}
-  _scene: {fileID: 59778914}
-  _nextMap: {fileID: 0}
+  scene: {fileID: 59778914}
+  _currentMap: {fileID: 0}
+  _exitTest: {fileID: 0}
+  mainCamera: {fileID: 963194227}
   _LoadedRooms:
-  - {fileID: 883961153558511260, guid: 1af019ec9de57da93a89e6eb7bedcdb2, type: 3}
-  - {fileID: 3625967198270766779, guid: 3b4e7143578339a9d8feb7be9f31d828, type: 3}
+  - {fileID: 8195828033090864749, guid: 1af019ec9de57da93a89e6eb7bedcdb2, type: 3}
+  - {fileID: 5181248937944083412, guid: 3b4e7143578339a9d8feb7be9f31d828, type: 3}
 --- !u!4 &593477016
 Transform:
   m_ObjectHideFlags: 0
@@ -595,6 +596,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -661,12 +663,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8284ad0405ba444bb4e14b3e4dc71d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLocation: {fileID: 0}
+  hasReachedDest: 0
+  moveAwayFrom: {fileID: 0}
+  speed: 5
 --- !u!1 &1567189314
 GameObject:
   m_ObjectHideFlags: 0
