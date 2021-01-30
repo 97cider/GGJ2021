@@ -47,7 +47,7 @@ public class RoomController : MonoBehaviour
             //Destroy(_currentMap);
 
             // Instantiate the next map a little bit in some direction.
-            Debug.Log()
+            Debug.Log("test");
             if (_currentMap.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().usedExit.GetComponent<Exit>().thisExit == exitType.Left){
                 
                 var leftPos = _currentMap.transform.position + new Vector3(-10, 0, 0);
