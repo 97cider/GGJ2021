@@ -10,6 +10,7 @@ public class RoomController : MonoBehaviour
     public Camera mainCamera;
     private Vector3 leftMost, rightMost, downMost;
     public List<GameObject> _LoadedRooms;
+    public GameObject player;
     private float zoffset;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,13 @@ public class RoomController : MonoBehaviour
             this.setNextLevel();
             //scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel = next_level;
             //scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel = setNextLevel();
+
+            // Spawn the player
+            Transform t =  scene.GetComponent<SceneHandler>().tileMap.transform.GetChild(0).transform.Find("Spawn");
+            Debug.Log(t.position);
+            //Vector3 spawner = scene.GetComponent<SceneHandler>().tileMap.transform.Find("Spawn").position;
+            Debug.Log($"Player is spawning at {t.position}");
+            Instantiate(player, t.position, Quaternion.identity);
         }
         leftMost = new Vector3(0,0,zoffset);
         rightMost = new Vector3(0,0,zoffset);
