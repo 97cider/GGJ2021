@@ -11,19 +11,48 @@ public class PlayerCombat : MonoBehaviour
 
     private Weapon _currentWeapon => _player.GetWeapon();
 
+    public float weaponCooldown;
+
+    private float maxCooldown => _player.GetWeapon().GetWeaponCooldown();
+
+    [SerializeField] private Animator Animator;
+
+    [SerializeField] private string AttackAnimName;
+
     void Awake () 
     {
         _player = this.GetComponent<PlayerStats>();
+        weaponCooldown = maxCooldown;
+    }
+
+    bool AnimatorIsPlaying(string stateName)
+    {
+        return Animator.GetCurrentAnimatorStateInfo(0).IsName(stateName);
+    }
+
+    void EquipWeapon() 
+    {
+        weaponCooldown = maxCooldown;
     }
     void Update() 
     {
+        if (maxCooldown > 0.0f)
+        {
+            weaponCooldown -= Time.deltaTime;
+        }
         // handle combat
         if (Input.GetMouseButtonDown(0) && !GameManager.isPaused) 
         {
             if (_currentWeapon != null) 
             {
-                print("Hey we attacked with " + this._currentWeapon.GetWeaponName());
-                _currentWeapon.Attack(this._projectileOrigin.position, _player.GetOrientation());
+                if (weaponCooldown <= 0.0f)
+                {
+                    Animator.Play(AttackAnimName);
+                    weaponCooldown = maxCooldown;
+                    print("Hey we attacked with " + this._currentWeapon.GetWeaponName());
+                    Vector2 orientation = new Vector2(this._projectileOrigin.localPosition.x / Mathf.Abs(this._projectileOrigin.localPosition.x), 0.0f);
+                    _currentWeapon.Attack(this._projectileOrigin.position, orientation);
+                }
             }
         }
     }

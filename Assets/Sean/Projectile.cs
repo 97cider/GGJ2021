@@ -52,7 +52,9 @@ public class Projectile : MonoBehaviour
 
     public virtual void OnShoot()
     {
-        // Do nothing for static moving projectiles
+        Vector3 projScale = this.transform.localScale;
+        projScale.x *= (direction.x / Mathf.Abs(direction.x));
+        this.transform.localScale = projScale;
     }
 
     protected void Dispose() 
@@ -64,6 +66,7 @@ public class Projectile : MonoBehaviour
     {
         Vector2 target = direction * speed * Time.deltaTime;
         this.transform.position += new Vector3(target.x, target.y, 0.0f);
+
         if (this.hasDuration) 
         {
             this.duration -= Time.deltaTime;
