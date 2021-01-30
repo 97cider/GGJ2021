@@ -18,6 +18,7 @@ public class Room : MonoBehaviour
     {
         // Load the next level.
         //nextLevel = RoomController.getNextLevel(this.parent);
+        this.usedExit = exitType.None;
         if (enemies.Count == 0){
             isCleared = true;
         }
