@@ -83,6 +83,9 @@ TextureImporter:
   - first:
       213: 7182760674876931646
     second: GGJ2021-SpriteSheet-Characters_29
+  - first:
+      213: -7878910005268077663
+    second: GGJ2021-SpriteSheet-Characters_30
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -809,6 +812,27 @@ TextureImporter:
       bones: []
       spriteID: e3e3fa427ca4ea360800000000000000
       internalID: 7182760674876931646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GGJ2021-SpriteSheet-Characters_30
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 226
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3a9be281d78a290800000000000000
+      internalID: -7878910005268077663
       vertices: []
       indices: 
       edges: []
