@@ -11,20 +11,19 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float horizontalMovementSpeed = 40.0f;
     [SerializeField] private float maxGravityScale = 9.0f;
     [SerializeField] private float addedGrav = 0.1f;                            // Grav scale units / sec
+    [SerializeField] private int maxJumps = 2;
 
-    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-    private bool m_Grounded;            // Whether or not the player is grounded.
+    const float k_GroundedRadius = .05f; // Radius of the overlap circle to determine if grounded
+    [SerializeField] private bool m_Grounded = false;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
 
+    [SerializeField] private int availableJumps = 2;
     private float horizontalInput = 0.0f;
     private float startingGravScale = 1.0f;
     private bool jumpInput = false;
-    
-
-    [SerializeField] private bool spentDoubleJump = false;
 
     [Header("Events")]
     [Space]
@@ -35,6 +34,7 @@ public class CharacterController2D : MonoBehaviour
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         startingGravScale = m_Rigidbody2D.gravityScale;
+        availableJumps = maxJumps;
 
         if (OnLandEvent == null)
             OnLandEvent = new UnityEvent();
@@ -48,6 +48,7 @@ public class CharacterController2D : MonoBehaviour
 
         Debug.Log("Horizontal input: " + horizontalInput);
         Debug.Log("Vertical input: " + jumpInput);
+        Debug.Log("Available jumps: " + availableJumps);
 
         Move(horizontalInput * horizontalMovementSpeed);
         Jump(jumpInput);
@@ -67,7 +68,8 @@ public class CharacterController2D : MonoBehaviour
         {
             if (colliders[i].gameObject != gameObject)
             {
-                
+                m_Grounded = true;
+
                 if (!wasGrounded)
                     OnLandEvent.Invoke();
             }
@@ -102,20 +104,18 @@ public class CharacterController2D : MonoBehaviour
 
     public void Jump(bool jump)
     {
-        // If the player should jump...
-        if (jump && (m_Grounded || !spentDoubleJump))
-        {
-            if(m_Grounded)
-            {
-                // Add a vertical force to the player.
-                m_Grounded = false;
-            }
-            else
-            {
-                ResetJumpVel();
-                spentDoubleJump = true;     //Maybe later add events for when we jump... sounds like a useful thing to know
-            }
+        bool hasJumpLeft = true;
 
+        if(availableJumps == 0)
+        {
+            hasJumpLeft = false;
+        }
+
+        // If the player should jump...
+        if (jump && hasJumpLeft)
+        {
+            ResetJumpVel();
+            availableJumps -= 1;
             ApplyJumpForce();
         }
     }
@@ -138,8 +138,7 @@ public class CharacterController2D : MonoBehaviour
     //Having fun learning how to use UnityEvents
     public void HandleLand()
     {
-        m_Grounded = true;
-        spentDoubleJump = false;
+        availableJumps = maxJumps;
         m_Rigidbody2D.gravityScale = startingGravScale;
     }
 
