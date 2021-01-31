@@ -40,6 +40,7 @@ public class UiController : MonoBehaviour
             Accessory a = player.GetComponent<PlayerStats>().getCurrentAccessory();
             accessory = a;
             accessoryIcon.sprite = a.accessorySprite;
+            a.getRichTextDescription();
             accessoryDescription.text = a.description;
             accessoryName.text = a.AccessoryName;
         }
