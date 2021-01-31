@@ -553,12 +553,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_17
       rect:
         serializedVersion: 2
-        x: 5
-        y: 129
+        x: 6
+        y: 130
         width: 23
-        height: 35
+        height: 34
       alignment: 9
-      pivot: {x: 0.5671853, y: 0.459382}
+      pivot: {x: 0.5652174, y: 0.47058824}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -574,12 +574,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_18
       rect:
         serializedVersion: 2
-        x: 28
-        y: 129
+        x: 29
+        y: 130
         width: 23
-        height: 35
+        height: 34
       alignment: 9
-      pivot: {x: 0.5671853, y: 0.459382}
+      pivot: {x: 0.5652174, y: 0.47058824}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -595,12 +595,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_19
       rect:
         serializedVersion: 2
-        x: 51
-        y: 129
+        x: 52
+        y: 130
         width: 23
-        height: 35
+        height: 34
       alignment: 9
-      pivot: {x: 0.5671853, y: 0.459382}
+      pivot: {x: 0.5652174, y: 0.47058824}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -616,12 +616,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_20
       rect:
         serializedVersion: 2
-        x: 74
-        y: 129
+        x: 75
+        y: 130
         width: 23
-        height: 35
+        height: 36
       alignment: 9
-      pivot: {x: 0.5671853, y: 0.459382}
+      pivot: {x: 0.5416667, y: 0.44444445}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -637,12 +637,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_21
       rect:
         serializedVersion: 2
-        x: 97
-        y: 129
-        width: 23
-        height: 35
+        x: 98
+        y: 130
+        width: 25
+        height: 36
       alignment: 9
-      pivot: {x: 0.5671853, y: 0.459382}
+      pivot: {x: 0.5416667, y: 0.44444445}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -658,12 +658,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_22
       rect:
         serializedVersion: 2
-        x: 9
-        y: 96
-        width: 22
-        height: 32
+        x: 8
+        y: 97
+        width: 24
+        height: 33
       alignment: 9
-      pivot: {x: 0.548678, y: 0.5}
+      pivot: {x: 0.5416667, y: 0.4848485}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -679,12 +679,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_23
       rect:
         serializedVersion: 2
-        x: 31
-        y: 96
-        width: 22
-        height: 32
+        x: 32
+        y: 97
+        width: 23
+        height: 33
       alignment: 9
-      pivot: {x: 0.548678, y: 0.5}
+      pivot: {x: 0.5217391, y: 0.4848485}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -700,12 +700,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_24
       rect:
         serializedVersion: 2
-        x: 53
-        y: 96
-        width: 22
-        height: 32
+        x: 55
+        y: 97
+        width: 23
+        height: 33
       alignment: 9
-      pivot: {x: 0.548678, y: 0.5}
+      pivot: {x: 0.5217391, y: 0.4848485}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -721,12 +721,12 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_25
       rect:
         serializedVersion: 2
-        x: 75
-        y: 96
-        width: 22
-        height: 32
+        x: 78
+        y: 97
+        width: 23
+        height: 33
       alignment: 9
-      pivot: {x: 0.548678, y: 0.5}
+      pivot: {x: 0.5217391, y: 0.4848485}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -745,7 +745,7 @@ TextureImporter:
         x: 11
         y: 64
         width: 23
-        height: 32
+        height: 33
       alignment: 9
       pivot: {x: 0.5590743, y: 0.5022886}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -766,7 +766,7 @@ TextureImporter:
         x: 39
         y: 64
         width: 24
-        height: 32
+        height: 33
       alignment: 9
       pivot: {x: 0.49471664, y: 0.5022886}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -787,7 +787,7 @@ TextureImporter:
         x: 65
         y: 64
         width: 22
-        height: 32
+        height: 33
       alignment: 9
       pivot: {x: 0.54876846, y: 0.5022886}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -807,8 +807,8 @@ TextureImporter:
         serializedVersion: 2
         x: 87
         y: 64
-        width: 24
-        height: 32
+        width: 25
+        height: 33
       alignment: 9
       pivot: {x: 0.5590743, y: 0.5022881}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -847,10 +847,10 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_31
       rect:
         serializedVersion: 2
-        x: 112
+        x: 111
         y: 176
-        width: 20
-        height: 35
+        width: 22
+        height: 38
       alignment: 9
       pivot: {x: 0.5, y: 0.45714286}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -868,10 +868,10 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_32
       rect:
         serializedVersion: 2
-        x: 132
+        x: 133
         y: 176
-        width: 20
-        height: 35
+        width: 22
+        height: 38
       alignment: 9
       pivot: {x: 0.5, y: 0.45714286}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -889,10 +889,10 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_33
       rect:
         serializedVersion: 2
-        x: 152
+        x: 155
         y: 176
-        width: 20
-        height: 35
+        width: 22
+        height: 38
       alignment: 9
       pivot: {x: 0.5, y: 0.45714286}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -910,10 +910,10 @@ TextureImporter:
       name: GGJ2021-SpriteSheet-Characters_34
       rect:
         serializedVersion: 2
-        x: 172
+        x: 177
         y: 176
-        width: 20
-        height: 35
+        width: 23
+        height: 38
       alignment: 9
       pivot: {x: 0.5, y: 0.45714286}
       border: {x: 0, y: 0, z: 0, w: 0}
