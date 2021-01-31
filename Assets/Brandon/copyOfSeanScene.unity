@@ -361,12 +361,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &401447877 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8491463938849043010, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267444777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &486927793
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,45 +398,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1632300739, guid: fa59b52d5550e2a42a224a9c6f5e3182, type: 3}
-      propertyPath: shakeCameraOnHit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1632300739, guid: fa59b52d5550e2a42a224a9c6f5e3182, type: 3}
-      propertyPath: shakeCameraOnAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 117596993663871298, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-        type: 3}
-      propertyPath: _projectilePrefab
-      value: 
-      objectReference: {fileID: 2030372901165887710, guid: 93388d25583f7754484a90b9625fed08,
-        type: 3}
-    - target: {fileID: 8491463938612068039, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-        type: 3}
-      propertyPath: _renderer
-      value: 
-      objectReference: {fileID: 401447877}
-    - target: {fileID: 8491463938612068039, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-        type: 3}
-      propertyPath: _maxHealth
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8491463938612068039, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-        type: 3}
-      propertyPath: _currentHealth
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8491463938612068039, guid: fa59b52d5550e2a42a224a9c6f5e3182,
         type: 3}
       propertyPath: _currentWeapon
       value: 
       objectReference: {fileID: 1980298974}
-    - target: {fileID: 8491463938612068039, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-        type: 3}
-      propertyPath: _weaponRenderer
-      value: 
-      objectReference: {fileID: 1409830408}
     - target: {fileID: 8491463938612068088, guid: fa59b52d5550e2a42a224a9c6f5e3182,
         type: 3}
       propertyPath: m_RootOrder
@@ -498,21 +458,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8491463938612068090, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-        type: 3}
-      propertyPath: m_inAirModifier
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8491463938612068094, guid: fa59b52d5550e2a42a224a9c6f5e3182,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8491463938849043010, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 944d6aa9316e7f64fb97d55dc0adbca5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa59b52d5550e2a42a224a9c6f5e3182, type: 3}
 --- !u!1 &1303838024
@@ -4589,12 +4539,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!212 &1409830408 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8491463938882768294, guid: fa59b52d5550e2a42a224a9c6f5e3182,
-    type: 3}
-  m_PrefabInstance: {fileID: 1267444777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1490626653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4680,6 +4624,7 @@ MonoBehaviour:
   _weaponDescription: 
   _weaponDamage: 3
   isProjectileWeapon: 1
+  description: 
   _projectilePrefab: {fileID: 2030372901165887710, guid: 93388d25583f7754484a90b9625fed08,
     type: 3}
   _projectileSpeed: 20
