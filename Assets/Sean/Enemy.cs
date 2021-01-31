@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected float _enemyContactDamage;
 
-    public UnityEvent DieEvents;
+    public UnityEvent<GameObject> DieEvents;
 
     protected virtual void Awake() 
     {
@@ -32,6 +32,6 @@ public class Enemy : MonoBehaviour
     public virtual void Die()
     {
         // Die.
-        DieEvents.Invoke();
+        DieEvents.Invoke(this.gameObject);
     }
 }

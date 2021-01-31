@@ -34,6 +34,8 @@ public class Skeleton : Enemy
     
     public bool isMoving = true;
 
+    private bool canMove;
+
     private Animator _anim;
 
     [Header("Animations")]
@@ -49,6 +51,7 @@ public class Skeleton : Enemy
         this._anim = this.GetComponent<Animator>();
         layer = LayerMask.GetMask("Player");
         _currentAttackCooldown = attackCooldown;
+        canMove = true;
     }
 
     public override void TakeDamage(float damage)
@@ -117,7 +120,12 @@ public class Skeleton : Enemy
 
     void Update()
     {
-        if(isMoving)
+        if (!canMove)
+        {
+            return;
+        }
+
+        if (isMoving)
         {
             _anim.Play(walkAnimationName);
             this.transform.position = transform.position + new Vector3(moveDir, 0, 0) * moveSpeed * Time.deltaTime;
@@ -202,5 +210,10 @@ public class Skeleton : Enemy
                 player.TakeDamage(this._enemyContactDamage);
             }
         }
+    }
+
+    public void CanMove(bool moveThatGearUp)
+    {
+        canMove = moveThatGearUp;
     }
 }
