@@ -25,6 +25,10 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Vector2 _orientation;
 
+    [SerializeField] private AudioClip playerHitSound;
+
+    private AudioSource aSource;
+
     public void resetStats(){
         this._maxHealth = 3;
         this._currentHealth = 3;
@@ -60,6 +64,7 @@ public class PlayerStats : MonoBehaviour
     }
     void Awake()
     {
+        aSource = gameObject.GetComponent<AudioSource>();
         _completedRooms = 0;
         _completedRuns = 0;
         _effects = this.GetComponent<PlayerEffectsController>();
@@ -106,6 +111,10 @@ public class PlayerStats : MonoBehaviour
     }    
     public void TakeDamage( int damage)
     {
+        aSource.Stop();
+        aSource.clip = playerHitSound;
+        aSource.loop = false;
+        aSource.Play();
         this._currentHealth -= damage;
         StartCoroutine(DamageFlicker());
         _effects.ShakeCameraOnHit();
