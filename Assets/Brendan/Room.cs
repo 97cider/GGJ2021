@@ -24,11 +24,6 @@ public class Room : MonoBehaviour
                 loadedEnemies = true;
             }
         }
-        if (enemies.Count == 0){
-            isCleared = true;
-            playDoorOpeningAnimation();
-            openDoors();
-        }
     }
     void Start()
     {
@@ -51,6 +46,11 @@ public class Room : MonoBehaviour
     }
     public void handleDeath(GameObject deadEntity){
         enemies.Remove(deadEntity);
+        if (enemies.Count == 0){
+            openDoors();
+            playDoorOpeningAnimation();
+            this.isCleared = true;
+        }
     }
     public List<GameObject> wrangleEnemies(){
         GameObject[] tmp_enem = GameObject.FindGameObjectsWithTag("Enemy") as GameObject[];

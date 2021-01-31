@@ -23,6 +23,7 @@ public class Exit : MonoBehaviour
             Debug.LogWarning("Col");
             GameObject obj = other.gameObject;
             if (room.GetComponent<Room>().usedExit == exitType.None && room.GetComponent<Room>().isCleared){
+                Debug.LogWarning("COLISION");
                 if (obj.layer == 6){
                     //room.GetComponent<RoomController>().scene..GetComponent<SceneHandler>().tileMap.GetComponent<Room>().usedExit.GetComponent<Exit>().thisExit = thisExit;
                     //room.GetComponent<RoomController>().setLevel();
