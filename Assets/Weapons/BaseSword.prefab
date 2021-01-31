@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d2f1db5ca440545ae669cace10888d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 7491372936373505940, guid: 107fadb4990a6d44285a2ce248894947,
+  weaponSprite: {fileID: 8971264534927417129, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
   _weaponName: Iron Sword
   _weaponDescription: Basic sword. 1 damage. Average attack speed

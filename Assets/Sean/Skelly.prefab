@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0e0d5031836e14b9878cd0e9b7aa7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHealth: 2
-  _enemyMaxHealth: 2
+  _enemyHealth: 3
+  _enemyMaxHealth: 3
   _enemyContactDamage: 1
   _renderer: {fileID: 0}
   DieEvents:
