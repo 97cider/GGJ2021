@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 944d6aa9316e7f64fb97d55dc0adbca5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,12 +122,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb796687aba15774f9059b318ce8f92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHealth: 0
-  _enemyMaxHealth: 100
+  _enemyHealth: 2
+  _enemyMaxHealth: 2
   _enemyContactDamage: 1
+  _renderer: {fileID: 0}
   DieEvents:
     m_PersistentCalls:
       m_Calls: []
+  flickerColor: {r: 1, g: 1, b: 1, a: 1}
   player: {fileID: 0}
   m_Grounded: 0
   jumpForce: 200

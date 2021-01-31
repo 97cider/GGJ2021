@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3924429836730160927}
   - component: {fileID: 3924429836730160928}
   - component: {fileID: 3316457243452017132}
+  - component: {fileID: 2001870506}
   m_Layer: 8
   m_Name: FlyingEnemy
   m_TagString: Untagged
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 944d6aa9316e7f64fb97d55dc0adbca5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,10 +74,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f,
+  m_SortingOrder: 32
+  m_Sprite: {fileID: 1945004827096562370, guid: 15097d67f166dfa48833d37ee9168307,
     type: 3}
-  m_Color: {r: 0.87013435, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -114,25 +115,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a4ceaa1095548448d792a4563bdb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHealth: 0
-  _enemyMaxHealth: 100
-  _enemyContactDamage: 2
+  _enemyHealth: 2
+  _enemyMaxHealth: 2
+  _enemyContactDamage: 1
+  _renderer: {fileID: 0}
   DieEvents:
     m_PersistentCalls:
       m_Calls: []
+  flickerColor: {r: 1, g: 1, b: 1, a: 1}
   player: {fileID: 0}
-  maxDistanceToPlayer: 5
+  maxDistanceToPlayer: 3
   enemySpeed: 5
   idleTime: 3
   moveTime: 5
   projSpeed: 4
-  projDamage: 10
+  projDamage: 1
   projDuration: 5
   pierceTargets: 0
   pierceWalls: 1
   _projectilePrefab: {fileID: 1970779960232795341, guid: ec8e703f1bd7334498e88df0e2d7ab2d,
     type: 3}
   projectileOrigin: {fileID: 1157299639827092383}
+  attackAnimationName: FlyingSkeletonAttack
+--- !u!95 &2001870506
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924429836730160931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37f84270e65f8974893fbca16f3c7174, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5756301536625064991
 GameObject:
   m_ObjectHideFlags: 0
