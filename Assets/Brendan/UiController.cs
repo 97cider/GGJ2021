@@ -25,9 +25,10 @@ public class UiController : MonoBehaviour
     public Canvas canvas;
     // Start is called before the first frame update
     public bool playerLoaded;
-    public void showPause(){
+    public void showPause(string pt){
+        pause.transform.GetChild(2).gameObject.GetComponent<Text>().text = pt;
+        pause.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = pt;
         canvas.GetComponent<GameManager>().ToggleGameState();
-
     }
     public void setRoomsCompleted(int r){
         this.roomsCompleted.text = (string) r.ToString();
