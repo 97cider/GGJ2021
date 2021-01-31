@@ -10,10 +10,6 @@ public class SceneManagemer : MonoBehaviour
         AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync("MainScene", LoadSceneMode.Single);
         yield return new WaitForEndOfFrame();
     }
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

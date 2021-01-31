@@ -23,7 +23,7 @@ public class RoomController : MonoBehaviour
         //zoffset = mainCamera.transform.position.z;
         zoffset = 0;
         //this._getTilemaps();
-        if (_LoadedRooms.Count > 0){
+ 
             var current_level = this.pickRandomRoom();
             _currentMap = current_level;
             this._currentMap = GameObject.Instantiate(_currentMap);
@@ -44,10 +44,6 @@ public class RoomController : MonoBehaviour
             player.transform.position = t.position;
             //player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
 
-            uiController.player = player;
-            uiController.updateHealth();
-            // Show the current accessory in the 
-        }
         leftMost = new Vector3(0,0,zoffset);
         rightMost = new Vector3(0,0,zoffset);
         downMost = new Vector3(0,0,zoffset);

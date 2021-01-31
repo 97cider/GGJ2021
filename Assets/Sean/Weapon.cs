@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private string _weaponDescription;
 
-    [SerializeField] private float _weaponDamage;
+    [SerializeField] private int _weaponDamage;
 
     [SerializeField] private bool isProjectileWeapon;
 
