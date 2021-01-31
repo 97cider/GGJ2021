@@ -5,11 +5,7 @@ using UnityEngine.Events;
 
 public class BossAI : Enemy
 {
-    public Color flickerColor;
-
     public float moveSpeed;
-
-    private SpriteRenderer _renderer;
 
     private int moveDir = 1;
 
@@ -78,11 +74,6 @@ public class BossAI : Enemy
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        // flash colors
-        if(base._enemyHealth > 0)
-        {
-            StartCoroutine(DamageFlicker());
-        }
     }
 
     public void StopMoving()
