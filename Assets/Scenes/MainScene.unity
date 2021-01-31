@@ -306,6 +306,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -2958199970102870743, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
       propertyPath: jumpSpeedModifier
       value: 1
       objectReference: {fileID: 0}
@@ -413,6 +419,12 @@ PrefabInstance:
       propertyPath: maxHPModifier
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -3213026790053522133, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
         type: 3}
       propertyPath: baselineDamageModifier
@@ -837,6 +849,12 @@ PrefabInstance:
       propertyPath: maxJumpScalar
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -6188526355246675024, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
         type: 3}
       propertyPath: movementSpeedModifier
@@ -1361,6 +1379,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
         type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -3037429311372330544, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
+    - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+        type: 3}
       propertyPath: baselineDamageModifier
       value: 1
       objectReference: {fileID: 0}
@@ -1541,6 +1565,12 @@ PrefabInstance:
       propertyPath: maxJumpScalar
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -3378166164001794318, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}
       propertyPath: movementSpeedModifier
@@ -1827,6 +1857,12 @@ PrefabInstance:
       propertyPath: maxHPModifier
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -8839108363360182695, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388cec66903a32542b44111615e5eb87, type: 3}
 --- !u!114 &576084729 stripped
@@ -2192,6 +2228,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
         type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: 3216875980906756152, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
+    - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
+        type: 3}
       propertyPath: movementSpeedModifier
       value: 1.5
       objectReference: {fileID: 0}
@@ -2254,6 +2296,12 @@ PrefabInstance:
       propertyPath: maxJumpScalar
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: 2615451409231467123, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
         type: 3}
       propertyPath: jumpSpeedModifier
@@ -2639,6 +2687,12 @@ PrefabInstance:
       propertyPath: maxJumpScalar
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -2885352152917925407, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}
       propertyPath: jumpSpeedModifier
@@ -3461,6 +3515,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -1872788080766857637, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
       propertyPath: jumpSpeedModifier
       value: 1
       objectReference: {fileID: 0}
@@ -4096,6 +4156,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
         type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -430993431921318938, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
+    - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
+        type: 3}
       propertyPath: movementSpeedModifier
       value: 0.75
       objectReference: {fileID: 0}
@@ -4143,6 +4209,12 @@ PrefabInstance:
       propertyPath: maxJumpScalar
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -2540837119889523882, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
         type: 3}
       propertyPath: baselineDamageModifier
@@ -4249,6 +4321,12 @@ PrefabInstance:
       propertyPath: maxJumpScalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: 6995557257908699243, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
         type: 3}
       propertyPath: jumpSpeedModifier
@@ -4417,6 +4495,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
         type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: 151828818356785724, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
+    - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
+        type: 3}
       propertyPath: movementSpeedModifier
       value: 1.1
       objectReference: {fileID: 0}
@@ -4455,6 +4539,12 @@ PrefabInstance:
       propertyPath: maxHPModifier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: accessorySprite
+      value: 
+      objectReference: {fileID: -5233720912704851691, guid: e22ec0311ab8c5b45a3ab0d94013c880,
+        type: 3}
     - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}
       propertyPath: baselineDamageModifier
