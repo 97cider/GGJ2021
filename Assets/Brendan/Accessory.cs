@@ -13,7 +13,7 @@ public class Accessory : MonoBehaviour
     public float movementSpeedModifier;
     public float jumpSpeedModifier;
     public int maxJumpScalar;
-
+    public int airModifier;
     // Player stats based modifiers
     public int maxHPModifier;
     public int baselineDamageModifier;

@@ -44,11 +44,13 @@ public class RoomController : MonoBehaviour
             Accessory a = itemController.getRandomAccessory();
             Weapon w = itemController.getRandomWeapon();
 
+            Debug.LogWarning($"STATS OF RANDO: {w._weaponDamage}");
+
             player.GetComponent<PlayerStats>().setCurrentAccessory(a);
             player.GetComponent<PlayerStats>().EquipWeapon(w);
             
             player.GetComponent<PlayerStats>().setMaxHP(a.maxHPModifier);
-            player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar);
+            player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar, a.airModifier);
         
             player.transform.position = t.position;
             //player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
@@ -111,7 +113,7 @@ public class RoomController : MonoBehaviour
                 player.GetComponent<PlayerStats>().EquipWeapon(w);
                 
                 player.GetComponent<PlayerStats>().setMaxHP(a.maxHPModifier);
-                player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar);
+                player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar, a.airModifier);
                 uiController.setWeaponUi(w);
                 uiController.setAccessoryUi(a);
 
