@@ -199,8 +199,10 @@ MonoBehaviour:
   _maxHealth: 3
   _movementSpeed: 10
   _jumpModifier: 10
-  _currentWeapon: {fileID: 0}
-  _currentAccessory: {fileID: 0}
+  _currentWeapon: {fileID: 1526918515870896266, guid: 054f890aa58e0e84a863e63ce98d07f6,
+    type: 3}
+  _currentAccessory: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
+    type: 3}
   _orientation: {x: 0, y: 0}
   _renderer: {fileID: 8491463938849043010}
   _weaponRenderer: {fileID: 8491463938882768294}

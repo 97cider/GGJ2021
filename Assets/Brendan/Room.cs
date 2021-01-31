@@ -14,8 +14,18 @@ public class Room : MonoBehaviour
     public GameObject roomController;
     public List<GameObject> enemies;
     public bool isCleared;
+    public bool loadedEnemies;
     void Update(){
-        if (isCleared){
+        Debug.LogError(enemies.Count);
+        if (!isCleared && !loadedEnemies){
+            var tmp = wrangleEnemies();
+            if(tmp.Count >= 1){
+                enemies = tmp;
+                loadedEnemies = true;
+            }
+        }
+        if (enemies.Count == 0){
+            isCleared = true;
             playDoorOpeningAnimation();
             openDoors();
         }
@@ -25,6 +35,7 @@ public class Room : MonoBehaviour
         // Load the next level.
         //nextLevel = RoomController.getNextLevel(this.parent);
         this.usedExit = exitType.None;
+        loadedEnemies = false;
         isCleared = false;
         //uncomment when actually done
         // if (enemies.Count == 0){
@@ -37,7 +48,19 @@ public class Room : MonoBehaviour
         //GameObject[] lgs = GameObject.FindGameObjectsWithTag("Exit");
         assignExits();
         playDoorIdle();
-
+        Debug.LogError(enemies.Count);
+    }
+    public void handleDeath(GameObject deadEntity){
+        enemies.Remove(deadEntity);
+    }
+    public List<GameObject> wrangleEnemies(){
+        GameObject[] tmp_enem = GameObject.FindGameObjectsWithTag("Enemy") as GameObject[];
+        List<GameObject> tmpEnemies = new List<GameObject>();
+        foreach(GameObject enemy in tmp_enem){
+            enemy.GetComponent<Enemy>().DieEvents.AddListener(handleDeath);
+            tmpEnemies.Add(enemy);
+        }
+        return tmpEnemies;
     }
     public void assignExits(){
         foreach(Transform child in transform.GetChild(0)){

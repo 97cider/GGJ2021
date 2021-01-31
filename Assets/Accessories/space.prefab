@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1963669915989369595
+--- !u!1 &1423451440003649017
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1963669915989369593}
-  - component: {fileID: 1963669915989369592}
+  - component: {fileID: 1423451440003649023}
+  - component: {fileID: 1423451440003649016}
   m_Layer: 0
-  m_Name: SkeleSpawner
+  m_Name: Accessory (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1963669915989369593
+--- !u!4 &1423451440003649023
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963669915989369595}
+  m_GameObject: {fileID: 1423451440003649017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.005881, y: -11.598603, z: 120.25125}
+  m_LocalPosition: {x: 142.25914, y: -53.048546, z: -12.998536}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1963669915989369592
+--- !u!114 &1423451440003649016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963669915989369595}
+  m_GameObject: {fileID: 1423451440003649017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93005a18ccdcd084a9140971834c6fa9, type: 3}
+  m_Script: {fileID: 11500000, guid: 290180cf3c406e04cb30f25d66085074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 8706794783680128819, guid: becc542da9fe7b740aaa15a69bd2920e,
+  AccessoryName: Space
+  accessorySprite: {fileID: 1458055678937002804, guid: 0d74c47e443c1e741a5cff1f8477c7fa,
     type: 3}
+  description: 
+  movementSpeedModifier: 0.75
+  jumpSpeedModifier: 1.2
+  maxJumpScalar: 4
+  maxHPModifier: 1
+  baselineDamageModifier: 2
