@@ -17,6 +17,8 @@ public class PlayerEffectsController : MonoBehaviour
 
     [SerializeField] private bool shakeCameraOnHit;
 
+    [SerializeField] private bool shakeCameraOnBossLand;
+
     void Awake()
     {
         mainCamera = Camera.main.gameObject;
@@ -49,5 +51,11 @@ public class PlayerEffectsController : MonoBehaviour
     {
         if(!shakeCameraOnHit) return;
         iTween.ShakePosition(mainCamera, new Vector3(0.2f, 0.2f, 0.0f), 0.30f);
+    }
+
+    public void ShakeCameraOnBossLand()
+    {
+        if(!shakeCameraOnBossLand) return;
+        iTween.ShakePosition(mainCamera, new Vector3(0.0f, -0.15f, 0.0f), 0.35f);
     }
 }
