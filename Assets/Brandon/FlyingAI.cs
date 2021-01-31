@@ -2,28 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingAI : MonoBehaviour
+public abstract class FlyingAI : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] protected GameObject player;
 
-    enum State { Idle, MoveTowards, Attack}
+    protected enum State { Idle, MoveTowards, Attack}
 
-    private State aiState;
-    private bool inAction;
+    protected State aiState;
+    protected bool inAction;
 
-    private Vector2 direction;
+    protected Vector2 direction;
 
     [SerializeField] private float maxDistanceToPlayer;
     [SerializeField] private float enemySpeed;
     [SerializeField] private float idleTime;
     [SerializeField] private float moveTime;
 
-    public GameObject _projectilePrefab;
-    public Transform projectileOrigin;
-
     // Start is called before the first frame update
     void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         aiState = State.Idle;
         inAction = false;
         direction = new Vector2(1, 0);
@@ -38,6 +36,8 @@ public class FlyingAI : MonoBehaviour
             inAction = true;
             StartCorrectAction();
         }
+
+        Debug.DrawRay(this.transform.position, direction * 30, Color.green);
     }
 
     private void DecideNewAction()
@@ -139,7 +139,7 @@ public class FlyingAI : MonoBehaviour
             }
 
 
-            MoveTowards(player.transform);
+            MoveTowards();
             yield return null;       
         }
     }
@@ -150,48 +150,31 @@ public class FlyingAI : MonoBehaviour
         inAction = false;
     }
 
-    IEnumerator Attack()
+    protected abstract IEnumerator Attack();
+
+    protected virtual void MoveTowards()
     {
-        DoAttack();
-        inAction = false;
-        yield break;
+        direction.x = GetXDirectionTowardsPlayer();
+
+        //transform.LookAt(towards);  //Might need to change worldUp here???
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * enemySpeed);
     }
 
-    protected virtual void DoAttack()
+    protected float GetXDirectionTowardsPlayer()
     {
-        GameObject boolet = GameObject.Instantiate(_projectilePrefab, projectileOrigin.position, Quaternion.identity);
-        EnemyProjectile proj = boolet.GetComponent<EnemyProjectile>();
+        Vector2 toTarget = player.transform.position - transform.position;
 
-        proj.speed = 5.0f;
-        proj.damage = 2.0f;
-        proj.hasDuration = true;
-        proj.duration = 3.0f;
-        proj.pierceTargets = false;
-        proj.pierceWalls = true;
-        proj.direction = player.transform.position - proj.transform.position;
-        proj.direction.Normalize();
-        
-        //proj.OnShoot(); ...what does this do..?
-    }
-
-    protected virtual void MoveTowards(Transform towards)
-    {
-        Vector2 toTarget = towards.position - transform.position;
-
-        if(toTarget.x > 0.0f)
+        if (toTarget.x > 0.0f)
         {
-            direction.x = 1.0f;
+            return 1.0f;
         }
         else
         {
-            direction.x = -1.0f;
+            return -1.0f;
         }
-
-        //transform.LookAt(towards);  //Might need to change worldUp here???
-        transform.position = Vector2.MoveTowards(transform.position, towards.position, Time.deltaTime * enemySpeed);
     }
 
-    private bool IsCloseToPlayer()
+    protected bool IsCloseToPlayer()
     {
         bool closeToPlayer = false;
 
