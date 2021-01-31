@@ -49,6 +49,7 @@ MonoBehaviour:
   _weaponDescription: sward
   _weaponDamage: 1
   isProjectileWeapon: 1
+  description: 
   _projectilePrefab: {fileID: 1695061136354074874}
   _projectileSpeed: 0
   _projectileDuration: 0
@@ -197,12 +198,11 @@ MonoBehaviour:
   _maxHealth: 100
   _movementSpeed: 10
   _jumpModifier: 10
-  _currentWeapon: {fileID: 117596993663871298}
+  _currentWeapon: {fileID: 0}
   _currentAccessory: {fileID: 0}
   _orientation: {x: 0, y: 0}
-  PlayerDeathEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _renderer: {fileID: 0}
+  _weaponRenderer: {fileID: 8491463938882768294}
 --- !u!114 &8491463938612068090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +385,8 @@ MonoBehaviour:
   characterSprite: {fileID: 8491463938849043012}
   shakeCameraOnJump: 0
   shakeCameraOnLand: 1
+  shakeCameraOnAttack: 0
+  shakeCameraOnHit: 0
 --- !u!1 &8491463938849043012
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +562,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 36
-  m_Sprite: {fileID: 8971264534927417129, guid: 107fadb4990a6d44285a2ce248894947,
+  m_Sprite: {fileID: 5866494310949508119, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

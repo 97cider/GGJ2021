@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private bool isProjectileWeapon;
 
+    public string description;
     [SerializeField] private GameObject _projectilePrefab;
 
     [SerializeField] private float _projectileSpeed;
