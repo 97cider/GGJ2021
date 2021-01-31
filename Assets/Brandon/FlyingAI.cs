@@ -11,7 +11,7 @@ public abstract class FlyingAI : MonoBehaviour
     protected State aiState;
     protected bool inAction;
 
-    private Vector2 direction;
+    protected Vector2 direction;
 
     [SerializeField] private float maxDistanceToPlayer;
     [SerializeField] private float enemySpeed;
@@ -36,6 +36,8 @@ public abstract class FlyingAI : MonoBehaviour
             inAction = true;
             StartCorrectAction();
         }
+
+        Debug.DrawRay(this.transform.position, direction * 30, Color.green);
     }
 
     private void DecideNewAction()
@@ -137,7 +139,7 @@ public abstract class FlyingAI : MonoBehaviour
             }
 
 
-            MoveTowards(player.transform);
+            MoveTowards();
             yield return null;       
         }
     }
@@ -150,21 +152,26 @@ public abstract class FlyingAI : MonoBehaviour
 
     protected abstract IEnumerator Attack();
 
-    protected virtual void MoveTowards(Transform towards)
+    protected virtual void MoveTowards()
     {
-        Vector2 toTarget = towards.position - transform.position;
+        direction.x = GetXDirectionTowardsPlayer();
 
-        if(toTarget.x > 0.0f)
+        //transform.LookAt(towards);  //Might need to change worldUp here???
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, Time.deltaTime * enemySpeed);
+    }
+
+    protected float GetXDirectionTowardsPlayer()
+    {
+        Vector2 toTarget = player.transform.position - transform.position;
+
+        if (toTarget.x > 0.0f)
         {
-            direction.x = 1.0f;
+            return 1.0f;
         }
         else
         {
-            direction.x = -1.0f;
+            return -1.0f;
         }
-
-        //transform.LookAt(towards);  //Might need to change worldUp here???
-        transform.position = Vector2.MoveTowards(transform.position, towards.position, Time.deltaTime * enemySpeed);
     }
 
     protected bool IsCloseToPlayer()

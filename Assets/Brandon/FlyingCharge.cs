@@ -27,6 +27,8 @@ public class FlyingCharge : FlyingAI
             yield return null;
         }
 
+        direction.x = GetXDirectionTowardsPlayer();
+
         inAction = false;
     }
 }
