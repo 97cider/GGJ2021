@@ -128,11 +128,11 @@ MonoBehaviour:
   player: {fileID: 0}
   maxDistanceToPlayer: 3
   enemySpeed: 5
-  idleTime: 3
+  idleTime: 5
   moveTime: 5
   deathObject: {fileID: 4386178369666743544, guid: 0965f25a3fe8d594cb2ba56836e6334b,
     type: 3}
-  projSpeed: 4
+  projSpeed: 2
   projDamage: 1
   projDuration: 5
   pierceTargets: 0
