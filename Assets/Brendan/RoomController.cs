@@ -95,7 +95,7 @@ public class RoomController : MonoBehaviour
                 new_level = _bossRooms[runsCompleted];
                 _nextMap = new_level;
             }
-            if ((r) % 5 == 0 && r != 0){
+            else if ((r) % 5 == 0 && r != 0){
                 this.isNewRun =true;
                 runsCompleted = runsCompleted+1;
                 uiController.setRunsCompleted(runsCompleted);
