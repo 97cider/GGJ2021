@@ -25,6 +25,8 @@ public abstract class FlyingAI : Enemy
 
     [SerializeField] protected GameObject deathObject;
 
+    
+
     // Start is called before the first frame update
     protected override void Awake()
     {

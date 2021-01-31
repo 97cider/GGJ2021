@@ -19,6 +19,13 @@ public class Projectile : MonoBehaviour
 
     public bool pierceTargets;
 
+
+
+    protected void Awake()
+    {
+        
+    }
+
     void OnCollisionEnter() 
     {
         GameObject.Destroy(this);
@@ -79,4 +86,6 @@ public class Projectile : MonoBehaviour
             }
         }
     }
+
+   
 }

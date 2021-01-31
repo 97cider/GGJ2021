@@ -7,8 +7,9 @@ public class ForceProjectile : Projectile
 
     private Rigidbody2D _rb;
 
-    void Awake()
+    protected void Awake()
     {
+        base.Awake();
         _rb = this.GetComponent<Rigidbody2D>();
     }
 
