@@ -46,7 +46,7 @@ public class PlayerCombat : MonoBehaviour
             weaponCooldown -= Time.deltaTime;
         }
         // handle combat
-        if (Input.GetMouseButtonDown(0) && !GameManager.isPaused) 
+        if ((Input.GetKeyDown(KeyCode.J) || Input.GetMouseButtonDown(0)) && !GameManager.isPaused) 
         {
             if (_currentWeapon != null) 
             {
