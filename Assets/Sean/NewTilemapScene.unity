@@ -443,6 +443,11 @@ PrefabInstance:
       propertyPath: _weaponRenderer
       value: 
       objectReference: {fileID: 1409830408}
+    - target: {fileID: 8491463938612068039, guid: fa59b52d5550e2a42a224a9c6f5e3182,
+        type: 3}
+      propertyPath: _currentAccessory
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8491463938612068088, guid: fa59b52d5550e2a42a224a9c6f5e3182,
         type: 3}
       propertyPath: m_RootOrder
