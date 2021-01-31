@@ -33,7 +33,6 @@ public class RoomController : MonoBehaviour
 
             // Spawn the player
             Transform t =  _currentMap.transform.GetChild(0).transform.Find("Spawn");
-            Debug.Log(t.position);
             //Vector3 spawner = _currentMap.transform.Find("Spawn").position;
             Debug.Log($"Player is spawning at {t.position}");
             Accessory a = itemController.getRandomAccessory();
@@ -41,10 +40,12 @@ public class RoomController : MonoBehaviour
 
             player.GetComponent<PlayerStats>().setCurrentAccessory(a);
             player.GetComponent<PlayerStats>().EquipWeapon(w);
-            player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
+
+            player.transform.position = t.position;
+            //player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
 
             uiController.player = player;
-
+            uiController.updateHealth();
             // Show the current accessory in the 
         }
         leftMost = new Vector3(0,0,zoffset);

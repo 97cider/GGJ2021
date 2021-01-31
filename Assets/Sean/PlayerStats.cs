@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
 
     public bool canMove;
     [SerializeField] private float _currentHealth;
-    [SerializeField] private float _maxHealth;
+    private float _maxHealth;
 
     [SerializeField] private float _movementSpeed;
 
@@ -16,8 +16,8 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Weapon _currentWeapon;
 
-    
     private int _completedLevels;
+    public UnityEvent playerdieEvent;
     private int _completedRuns;
 
     [SerializeField] private Accessory _currentAccessory;
@@ -29,16 +29,28 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private SpriteRenderer _weaponRenderer;
     private PlayerEffectsController _effects;
 
+
+    public float getMaxHP(){
+        return this._maxHealth;
+    }
+    public float getCurrentHp(){
+        return this._currentHealth;
+    }
     void Awake()
     {
         _effects = this.GetComponent<PlayerEffectsController>();
+        if(playerdieEvent == null){
+            playerdieEvent = new UnityEvent();
+        }
     }
     public void Start()
     {
         if(_currentAccessory != null) 
         {
-            this._maxHealth = _currentAccessory.maxJumpScalar;
+            this._maxHealth = _currentAccessory.maxHPModifier;
+            Debug.Log($"Max health via null chek: {this._maxHealth}");
         }
+        this._currentHealth = this._maxHealth;
         // Modify properties based on current accessory
         var w = GetWeapon();
         this.EquipWeapon(w);
@@ -68,12 +80,15 @@ public class PlayerStats : MonoBehaviour
     {
         return this._orientation;
     }
-
+    private void Update() {
+        //Debug.Log($"Current Max Hp: {this._maxHealth}");
+    }    
     public void TakeDamage(float damage)
     {
         this._currentHealth -= damage;
         StartCoroutine(DamageFlicker());
         _effects.ShakeCameraOnHit();
+        _effects.updateGui();
         if (this._currentHealth <= 0.0f)
         {
             this.Die();
@@ -91,6 +106,8 @@ public class PlayerStats : MonoBehaviour
     public void Die()
     {
         StopAllCoroutines();
+        playerdieEvent.Invoke();
+        Destroy(this.gameObject);
     }
 
     private IEnumerator DamageFlicker()

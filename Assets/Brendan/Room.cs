@@ -16,7 +16,7 @@ public class Room : MonoBehaviour
     public bool isCleared;
     public bool loadedEnemies;
     void Update(){
-        Debug.LogError(enemies.Count);
+        //Debug.LogError(enemies.Count);
         if (!isCleared && !loadedEnemies){
             var tmp = wrangleEnemies();
             if(tmp.Count >= 1){
@@ -48,7 +48,6 @@ public class Room : MonoBehaviour
         //GameObject[] lgs = GameObject.FindGameObjectsWithTag("Exit");
         assignExits();
         playDoorIdle();
-        Debug.LogError(enemies.Count);
     }
     public void handleDeath(GameObject deadEntity){
         enemies.Remove(deadEntity);
