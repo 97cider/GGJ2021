@@ -6,9 +6,8 @@ public class SceneManagemer : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    private IEnumerator moveToPlayScene(){
-        AsyncOperation asyncLoadLevel = SceneManager.LoadSceneAsync("MainScene", LoadSceneMode.Single);
-        yield return new WaitForEndOfFrame();
+    public void moveToPlayScene(){
+        SceneManager.LoadScene("MainScene");
     }
 
     // Update is called once per frame
