@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 1632300739}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8491463938612068094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.32, y: 8.18, z: 0}
+  m_LocalPosition: {x: -1.5, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8491463938958185543}
@@ -196,12 +196,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 0
   _currentHealth: 3
-  _maxHealth: 3
   _movementSpeed: 10
   _jumpModifier: 10
   _currentWeapon: {fileID: 606699932490237785, guid: a00768f2bac578c4bbde38e9418ed02f,
     type: 3}
-  _currentAccessory: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+  playerdieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _currentAccessory: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
     type: 3}
   _orientation: {x: 0, y: 0}
   _renderer: {fileID: 8491463938849043010}
@@ -385,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
+  ui: {fileID: 0}
   characterSprite: {fileID: 8491463938849043012}
   shakeCameraOnJump: 0
   shakeCameraOnLand: 1

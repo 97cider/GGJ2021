@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
@@ -50,10 +50,20 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         this.pauseMenu.SetActive(false);
+        //var psobj = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerStats>().playerdieEvent;
+        //G//ameObject.FindWithTag("Player").gameObject.GetComponent<PlayerStats>().playerdieEvent.AddListener(deathHandler);
     }
+    void Start(){
+        var psobj = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerStats>().playerdieEvent;
+        GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerStats>().playerdieEvent.AddListener(deathHandler);
 
+    }
+    void deathHandler(){
+        SceneManager.LoadScene("MainMenu");
+    }
     void Update()
     {
+
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleGameState();

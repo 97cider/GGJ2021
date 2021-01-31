@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2247485750781794399}
   - component: {fileID: 2247485750781794368}
   m_Layer: 0
-  m_Name: Accessory
+  m_Name: noJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,9 +46,10 @@ MonoBehaviour:
   AccessoryName: NoJump
   accessorySprite: {fileID: 1234382726942843123, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
-  description: 
+  description: "<color=red>1</color>: Max HP \n<color=grey>1</color>: Speed \n<color=red>0</color>:
+    Jump Speed \n<color=red>0</color>: Max Jumps \n"
   movementSpeedModifier: 1
   jumpSpeedModifier: 0
   maxJumpScalar: 0
-  maxHPModifier: 1
+  maxHPModifier: 3
   baselineDamageModifier: 1

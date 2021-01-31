@@ -16,21 +16,46 @@ public class UiController : MonoBehaviour
 
     public Accessory accessory;
     public GameObject player;
+    
+    public GameObject health;
+    public GameObject hp;
 
+    public Canvas canvas;
     // Start is called before the first frame update
+    public bool playerLoaded;
     void Start()
     {
-        
+        playerLoaded = false;
     }
 
+    public void updateCurrentHealth(){
+        for(int i = (int) player.GetComponent<PlayerStats>().getMaxHP()-1; i > player.GetComponent<PlayerStats>().getCurrentHp()-1; i--){
+            var thp = health.transform.GetChild(i);
+            thp.GetChild(1).GetComponent<Image>().enabled = false;
+        }
+    }
+    public void updateHealth(){
+        Debug.Log($"Current max hp via uicont: {player.GetComponent<PlayerStats>().getMaxHP()}");
+        for(int i =0; i < (int) player.GetComponent<PlayerStats>().getMaxHP(); i++){
+            var thp = Instantiate(hp, health.transform);
+            thp.transform.localScale = new Vector3(1,1,1);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (player != null){
+        if (player != null && !playerLoaded){
+            Debug.Log(player);
+            updateHealth();
+            // do accessory updating here.
+            playerLoaded = true;
+
+            player.GetComponent<PlayerEffectsController>().ui = this;
             //weaponIcon.mainTexture = player.GetComponent<PlayerStats>().GetWeapon().
 
             // Weapon icon setting
             Weapon w = player.GetComponent<PlayerStats>().GetWeapon();
+
             weapon = w;
             weaponIcon.sprite = w.weaponSprite;
             weaponDescription.text = w.description;
@@ -43,6 +68,8 @@ public class UiController : MonoBehaviour
             a.getRichTextDescription();
             accessoryDescription.text = a.description;
             accessoryName.text = a.AccessoryName;
+
+
         }
     }
 }
