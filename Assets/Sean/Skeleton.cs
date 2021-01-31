@@ -20,6 +20,7 @@ public class Skeleton : Enemy
     private float _currentAttackCooldown;
 
     public float _shotForce;
+    public float boneDuration;
 
     public GameObject enemyProjectile;
 
@@ -103,6 +104,8 @@ public class Skeleton : Enemy
         Projectile projComp = proj.GetComponent<Projectile>();
         
         projComp.speed = _shotForce;
+        projComp.hasDuration = true;
+        projComp.duration = boneDuration;
         
         float xDir = projectileOrientation.x * moveDir;
         float yDir = projectileOrientation.y;

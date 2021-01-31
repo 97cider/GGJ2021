@@ -188,6 +188,7 @@ MonoBehaviour:
   playerDetectRange: 5
   attackCooldown: 1
   _shotForce: 20
+  boneDuration: 3
   enemyProjectile: {fileID: 4639260447759542688, guid: b1c59fa033b9c3a4f9c4be5848a84f0e,
     type: 3}
   enemyShootPoint: {fileID: 8706794784058529667}
