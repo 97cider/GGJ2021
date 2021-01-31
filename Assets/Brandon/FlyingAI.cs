@@ -23,6 +23,8 @@ public abstract class FlyingAI : Enemy
 
     protected Animator animator;
 
+    [SerializeField] protected GameObject deathObject;
+
     // Start is called before the first frame update
     protected override void Awake()
     {
@@ -227,5 +229,13 @@ public abstract class FlyingAI : Enemy
             StopAllCoroutines();
             inAction = false;
         }
+    }
+
+    public override void Die()
+    {
+        StopAllCoroutines();
+        Instantiate(deathObject, this.transform.position, Quaternion.identity);
+        base.Die();
+        Destroy(this.gameObject);
     }
 }
