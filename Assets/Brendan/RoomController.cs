@@ -99,6 +99,7 @@ public class RoomController : MonoBehaviour
                 r= player.GetComponent<PlayerStats>().getCompletedRooms();
                 this.isNewRun =true;
                 runsCompleted = runsCompleted+1;
+                player.GetComponent<PlayerStats>().runsCompleted = runsCompleted;
                 uiController.setRunsCompleted(runsCompleted);
                 //Reset player run stats
                 player.GetComponent<CharacterController2D>().resetStats();
@@ -113,6 +114,7 @@ public class RoomController : MonoBehaviour
                 player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar);
                 uiController.setWeaponUi(w);
                 uiController.setAccessoryUi(a);
+
 
                 //Update the health ui to show the new change
                 r = 0;

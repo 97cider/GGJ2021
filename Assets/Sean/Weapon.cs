@@ -9,8 +9,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private string _weaponDescription;
 
-    [SerializeField] private int _weaponDamage;
-
+    [SerializeField] public int _weaponDamage;
     [SerializeField] private bool isProjectileWeapon;
 
     public string description;
@@ -42,7 +41,7 @@ public class Weapon : MonoBehaviour
         // Transfer over properties, multiplicitavely.
         if (a != null)
         {
-            _weaponDamage =_weaponDamage * a.baselineDamageModifier;
+            _weaponDamage =_weaponDamage;
         }
     }
     public float GetWeaponCooldown()

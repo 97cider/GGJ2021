@@ -64,10 +64,12 @@ public class BossAI : Enemy
     protected override void Awake()
     {
         base.Awake();
+        _mc = FindObjectOfType<PlayerStats>();
+        this._enemyMaxHealth = this._enemyMaxHealth * (1 + ((.25f) * _mc.runsCompleted));
+        Debug.LogError($"BOSS MAX HP: {this._enemyMaxHealth}");
         this._renderer = this.GetComponent<SpriteRenderer>();
         this._anim = this.GetComponent<Animator>();
         this._rigid = this.GetComponent<Rigidbody2D>();
-        _mc = FindObjectOfType<PlayerStats>();
         layer = LayerMask.GetMask("Player");
         _currentAttackCooldown = attackCooldown;
         canMove = true;

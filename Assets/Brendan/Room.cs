@@ -53,6 +53,10 @@ public class Room : MonoBehaviour
             
         }
     }
+    public GameObject[] getEnemies(){
+          GameObject[] tmp_enem = GameObject.FindGameObjectsWithTag("Enemy") as GameObject[];
+          return tmp_enem;
+    }
     public List<GameObject> wrangleEnemies(){
         GameObject[] tmp_enem = GameObject.FindGameObjectsWithTag("Enemy") as GameObject[];
         List<GameObject> tmpEnemies = new List<GameObject>();

@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private float _movementSpeed;
 
+    public int runsCompleted;
     [SerializeField] private float _jumpModifier;
 
     [SerializeField] private Weapon _currentWeapon;
