@@ -128,6 +128,8 @@ MonoBehaviour:
   enemySpeed: 5
   idleTime: 3
   moveTime: 5
+  deathObject: {fileID: 5450446496875618778, guid: 9d65891e9cab3c34ca74685f6ad0bd47,
+    type: 3}
   projSpeed: 4
   projDamage: 1
   projDuration: 5
