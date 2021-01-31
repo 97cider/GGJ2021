@@ -50,6 +50,7 @@ public class Room : MonoBehaviour
             openDoors();
             playDoorOpeningAnimation();
             this.isCleared = true;
+            
         }
     }
     public List<GameObject> wrangleEnemies(){

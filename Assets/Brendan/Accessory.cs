@@ -69,6 +69,5 @@ public class Accessory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.LogError(this.description);
     }
 }

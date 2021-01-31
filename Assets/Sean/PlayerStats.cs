@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Weapon _currentWeapon;
 
-    private int _completedLevels;
+    private int _completedRooms;
     public UnityEvent playerdieEvent;
     private int _completedRuns;
 
@@ -24,12 +24,25 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Vector2 _orientation;
 
+
+    public int getCompletedRooms(){
+        return this._completedRooms;
+    }
+    public void setCompletedRooms(int r){
+        this._completedRooms =r ;
+    }
+    public int getCompletedRuns(){
+        return this._completedRuns;
+    }
+    public void setCompletedRuns(int r){
+        this._completedRuns = r;
+    }
     [SerializeField] private SpriteRenderer _renderer;
 
     [SerializeField] private SpriteRenderer _weaponRenderer;
     private PlayerEffectsController _effects;
 
-
+    
     public int getMaxHP(){
         return this._maxHealth;
     }
@@ -43,6 +56,8 @@ public class PlayerStats : MonoBehaviour
     }
     void Awake()
     {
+        _completedRooms = 0;
+        _completedRuns = 0;
         _effects = this.GetComponent<PlayerEffectsController>();
         if(playerdieEvent == null){
             playerdieEvent = new UnityEvent();

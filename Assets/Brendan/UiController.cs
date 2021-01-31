@@ -10,6 +10,8 @@ public class UiController : MonoBehaviour
     public Weapon weapon;
     public Image accessoryIcon;
     public Text accessoryName;
+    public Text roomsCompleted;
+    public Text runsCompleted;
     public Text weaponName;
     public Text weaponDescription;
     public Text accessoryDescription;
@@ -23,6 +25,13 @@ public class UiController : MonoBehaviour
     public Canvas canvas;
     // Start is called before the first frame update
     public bool playerLoaded;
+
+    public void setRoomsCompleted(int r){
+        this.roomsCompleted.text = (string) r.ToString();
+    }
+    public void setRunsCompleted(int r){
+        this.runsCompleted.text = (string) r.ToString();
+    }
     void Start()
     {
         playerLoaded = false;

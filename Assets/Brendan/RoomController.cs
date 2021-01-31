@@ -5,9 +5,11 @@ using static Exit;
 public class RoomController : MonoBehaviour
 {
     public GameObject scene;
+    public int runsCompleted;
     public GameObject _currentMap;
     public GameObject _nextMap;
     public GameObject _exitTest;
+    public List<GameObject> _bossRooms;
     public Camera mainCamera;
     private Vector3 leftMost, rightMost, downMost;
     public List<GameObject> _LoadedRooms;
@@ -19,7 +21,9 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        runsCompleted =0;
+        uiController.setRoomsCompleted(0);
+        uiController.setRunsCompleted(0);
         //zoffset = mainCamera.transform.position.z;
         zoffset = 0;
         //this._getTilemaps();
@@ -60,8 +64,6 @@ public class RoomController : MonoBehaviour
         while (new_level.gameObject == _currentMap.gameObject){
             new_level = this.pickRandomRoom();
         }
-        Debug.LogError(new_level);
-        Debug.LogError(_currentMap);
         // Set the current level in the room controller
         //_nextMap = new_level;
         // Set the current level in the scene
@@ -76,13 +78,27 @@ public class RoomController : MonoBehaviour
             //_currentMap = _nextMap;
             var new_level = this.pickRandomRoom();
             //Remember to do check
+            var r = player.GetComponent<PlayerStats>().getCompletedRooms();
+            player.GetComponent<PlayerStats>().setCompletedRooms(r+1);
+            r= player.GetComponent<PlayerStats>().getCompletedRooms();
+            uiController.setRoomsCompleted(r+1);
+            Debug.LogWarning(runsCompleted);
             while (new_level == _currentMap){
                 new_level = this.pickRandomRoom();
+            }
+            Debug.LogError(r);
+            if (r == 4){
+                Debug.LogError("SPAWN BOSS");
+                new_level = _bossRooms[runsCompleted];
+                _nextMap = new_level;
+            }
+            if ((r) % 5 == 0 && r != 0){
+                runsCompleted = runsCompleted+1;
+                uiController.setRunsCompleted(runsCompleted);
             }
             if (_currentMap.GetComponent<Room>().usedExit == exitType.Left){
                 // We exit stage left. Spawn a room to the left, pan to it, and then set the current room to that room
                 // Instantiate the next level far away from the left
-                Debug.LogError("DOING LEFT");
                 var _currentNextMap = Instantiate(_nextMap, leftMost+new Vector3(-movement, 0,0), Quaternion.identity) as GameObject;
                 this._currentMap.GetComponent<Room>().roomController = this.gameObject;
                 _nextMap = _currentNextMap;
@@ -102,7 +118,6 @@ public class RoomController : MonoBehaviour
                 rightMost = rightMost+new Vector3(movement, 0,0);
                 leftMost = rightMost;
                 downMost = rightMost;
-                Debug.LogError("DOING RIGHT");
                 mainCamera.GetComponent<CameraController>().targetLocation = _currentNextMap.transform;
                 this._nextMap.GetComponent<Room>().roomController = this.gameObject;
                 this._currentMap.GetComponent<Room>().assignExits();
@@ -118,7 +133,6 @@ public class RoomController : MonoBehaviour
                 downMost = downMost+new Vector3(0, -(movement-5),0);
                 rightMost = downMost;
                 leftMost = downMost;
-                Debug.LogError("DOING DOWN");
                 this._currentMap.GetComponent<Room>().assignExits();
                 //var next_level_exit = _nextMap.transform.position;
             }
