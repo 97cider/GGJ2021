@@ -125,4 +125,9 @@ public class PlayerStats : MonoBehaviour
             _renderer.material.SetColor("_AdditiveTint", Color.clear);
         }
     }
+
+    public void PlayShockWave()
+    {
+        _effects.ShakeCameraOnBossLand();
+    }
 }
