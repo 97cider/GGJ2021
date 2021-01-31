@@ -15,7 +15,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private float m_inAirModifier = 2;
 
     public PlayerStats playerstats;
-    const float k_GroundedRadius = .05f; // Radius of the overlap circle to determine if grounded
+    const float k_GroundedRadius = .1f; // Radius of the overlap circle to determine if grounded
     [SerializeField] private bool m_Grounded = false;            // Whether or not the player is grounded.
     const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
     public Rigidbody2D m_Rigidbody2D;
@@ -257,8 +257,9 @@ public class CharacterController2D : MonoBehaviour
     {
         float curVerticalVel = m_Rigidbody2D.velocity.y;
 
-        if(curVerticalVel < 0.0f)
+        if(!m_Grounded && curVerticalVel < 0.0f)
         {
+            Debug.Log("gonna add grav scale");
             m_Rigidbody2D.gravityScale += (Time.deltaTime * addedGrav);
             m_Rigidbody2D.gravityScale = Mathf.Clamp(m_Rigidbody2D.gravityScale, startingGravScale, maxGravityScale);
         }

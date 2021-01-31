@@ -9,6 +9,11 @@ public class UiController : MonoBehaviour
     public Image weaponIcon;
     public Weapon weapon;
     public Image accessoryIcon;
+    public Text accessoryName;
+    public Text weaponName;
+    public Text weaponDescription;
+    public Text accessoryDescription;
+
     public Accessory accessory;
     public GameObject player;
 
@@ -28,11 +33,15 @@ public class UiController : MonoBehaviour
             Weapon w = player.GetComponent<PlayerStats>().GetWeapon();
             weapon = w;
             weaponIcon.sprite = w.weaponSprite;
+            weaponDescription.text = w.description;
+            weaponName.text = w.name;
 
             // Accessory icon setting
             Accessory a = player.GetComponent<PlayerStats>().getCurrentAccessory();
             accessory = a;
             accessoryIcon.sprite = a.accessorySprite;
+            accessoryDescription.text = a.description;
+            accessoryName.text = a.AccessoryName;
         }
     }
 }

@@ -50,7 +50,8 @@ MonoBehaviour:
   _weaponDamage: 1
   isProjectileWeapon: 1
   description: 
-  _projectilePrefab: {fileID: 1695061136354074874}
+  _projectilePrefab: {fileID: 2030372901165887710, guid: 93388d25583f7754484a90b9625fed08,
+    type: 3}
   _projectileSpeed: 0
   _projectileDuration: 0
   _fireRate: 0
@@ -194,14 +195,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 0
-  _currentHealth: 100
-  _maxHealth: 100
+  _currentHealth: 3
+  _maxHealth: 3
   _movementSpeed: 10
   _jumpModifier: 10
   _currentWeapon: {fileID: 0}
   _currentAccessory: {fileID: 0}
   _orientation: {x: 0, y: 0}
-  _renderer: {fileID: 0}
+  _renderer: {fileID: 8491463938849043010}
   _weaponRenderer: {fileID: 8491463938882768294}
 --- !u!114 &8491463938612068090
 MonoBehaviour:
@@ -226,7 +227,7 @@ MonoBehaviour:
   maxGravityScale: 9
   addedGrav: 5
   maxJumps: 2
-  m_inAirModifier: 0.75
+  m_inAirModifier: 0.5
   playerstats: {fileID: 0}
   m_Grounded: 0
   m_Rigidbody2D: {fileID: 0}
@@ -385,8 +386,8 @@ MonoBehaviour:
   characterSprite: {fileID: 8491463938849043012}
   shakeCameraOnJump: 0
   shakeCameraOnLand: 1
-  shakeCameraOnAttack: 0
-  shakeCameraOnHit: 0
+  shakeCameraOnAttack: 1
+  shakeCameraOnHit: 1
 --- !u!1 &8491463938849043012
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +440,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 944d6aa9316e7f64fb97d55dc0adbca5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -562,7 +563,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 36
-  m_Sprite: {fileID: 5866494310949508119, guid: 107fadb4990a6d44285a2ce248894947,
+  m_Sprite: {fileID: -1315175341226311843, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
