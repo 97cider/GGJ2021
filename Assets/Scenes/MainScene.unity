@@ -1686,6 +1686,10 @@ MonoBehaviour:
   - {fileID: 3701746439977250055, guid: 41c55eeb0a89ca346ad60abc74b46b07, type: 3}
   - {fileID: 3701746439977250055, guid: 0a1bd7681bd538541a4437524a3ef2f4, type: 3}
   - {fileID: 3701746439977250055, guid: 70811e391f8056d43bb0c5d78a2db7ba, type: 3}
+  - {fileID: 7528543715838590504, guid: 50a71492d57727d4c970807dc57a9f38, type: 3}
+  - {fileID: 6126040958105494156, guid: acf67b0037aa0a649a962790f117399c, type: 3}
+  - {fileID: 4718280354288599791, guid: cb29c12ebe031be40b889a5f45ab1409, type: 3}
+  - {fileID: 7940730822993984675, guid: f4b1ef148c6313f43b2005900456a4cd, type: 3}
   uiController: {fileID: 389444909}
   player: {fileID: 72064872}
   itemController: {fileID: 478625675}
