@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Exit;
 public class RoomController : MonoBehaviour
 {
@@ -83,11 +84,14 @@ public class RoomController : MonoBehaviour
             //_currentMap = _nextMap;
             var new_level = this.pickRandomRoom();
             //Remember to do check
+            var runs = player.GetComponent<PlayerStats>().runsCompleted;
             var r = player.GetComponent<PlayerStats>().getCompletedRooms();
             player.GetComponent<PlayerStats>().setCompletedRooms(r+1);
             r= player.GetComponent<PlayerStats>().getCompletedRooms();
             uiController.setRoomsCompleted(r);
-            Debug.LogWarning(runsCompleted);
+            if (runs == 4){
+                Debug.LogError("You win");
+            }
             while (new_level == _currentMap){
                 new_level = this.pickRandomRoom();
             }
@@ -101,6 +105,9 @@ public class RoomController : MonoBehaviour
                 r= player.GetComponent<PlayerStats>().getCompletedRooms();
                 this.isNewRun =true;
                 runsCompleted = runsCompleted+1;
+                if(runsCompleted == 5){
+                    SceneManager.LoadScene("WinScene");
+                }
                 player.GetComponent<PlayerStats>().runsCompleted = runsCompleted;
                 uiController.setRunsCompleted(runsCompleted);
                 //Reset player run stats
