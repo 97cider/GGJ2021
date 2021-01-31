@@ -23,7 +23,7 @@ public class RoomController : MonoBehaviour
         //zoffset = mainCamera.transform.position.z;
         zoffset = 0;
         //this._getTilemaps();
- 
+    
             var current_level = this.pickRandomRoom();
             _currentMap = current_level;
             this._currentMap = GameObject.Instantiate(_currentMap);
@@ -40,10 +40,10 @@ public class RoomController : MonoBehaviour
 
             player.GetComponent<PlayerStats>().setCurrentAccessory(a);
             player.GetComponent<PlayerStats>().EquipWeapon(w);
-
+            
+            player.GetComponent<PlayerStats>().setMaxHP(a.maxHPModifier);
             player.transform.position = t.position;
             //player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
-
         leftMost = new Vector3(0,0,zoffset);
         rightMost = new Vector3(0,0,zoffset);
         downMost = new Vector3(0,0,zoffset);

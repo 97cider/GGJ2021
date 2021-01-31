@@ -52,6 +52,7 @@ public class UiController : MonoBehaviour
             Debug.Log(player);
             updateHealth();
             // do accessory updating here.
+            Debug.LogWarning(player.GetComponent<PlayerStats>().getMaxHP());
             playerLoaded = true;
 
             player.GetComponent<PlayerEffectsController>().ui = this;
