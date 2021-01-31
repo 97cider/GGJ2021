@@ -7,7 +7,9 @@ public class UiController : MonoBehaviour
 {
 
     public Image weaponIcon;
+    public Weapon weapon;
     public Image accessoryIcon;
+    public Accessory accessory;
     public GameObject player;
 
     // Start is called before the first frame update
@@ -21,7 +23,16 @@ public class UiController : MonoBehaviour
     {
         if (player != null){
             //weaponIcon.mainTexture = player.GetComponent<PlayerStats>().GetWeapon().
-            Debug.Log("wew");
+
+            // Weapon icon setting
+            Weapon w = player.GetComponent<PlayerStats>().GetWeapon();
+            weapon = w;
+            weaponIcon.sprite = w.weaponSprite;
+
+            // Accessory icon setting
+            Accessory a = player.GetComponent<PlayerStats>().getCurrentAccessory();
+            accessory = a;
+            accessoryIcon.sprite = a.accessorySprite;
         }
     }
 }
