@@ -25,11 +25,17 @@ public class Accessory : MonoBehaviour
         if (maxHPModifier > 3){
             mhp_color = "green";
         }
+        else if (maxHPModifier == 3){
+            mhp_color = "grey";
+        }
         else{
             mhp_color = "red";
         }
         if (movementSpeedModifier > 1){
             speed_color = "green";
+        }
+        else if (movementSpeedModifier == 1){
+            speed_color = "grey";
         }
         else{
             speed_color = "red";
@@ -37,16 +43,22 @@ public class Accessory : MonoBehaviour
         if (jumpSpeedModifier > 1){
             jcolor = "green";
         }
+        else if (jumpSpeedModifier == 1){
+            jcolor = "grey";
+        }
         else{
             jcolor = "red";
         }
         if (maxJumpScalar > 1){
             mx_color = "green";
         }
+        else if (maxJumpScalar == 1){
+            mx_color = "grey";
+        }
         else{
             mx_color = "red";
         }
-        var strs = $"<color = {mhp_color}>{maxHPModifier}</color>: Max HP \n <color = {speed_color}>{movementSpeedModifier}</color>: Speed \n <color = {jcolor}{jumpSpeedModifier}</color>: Jump Speed \n <color = {mx_color}{maxJumpScalar}</color>: Jump Speed \n";
+        var strs = $"<color={mhp_color}>{maxHPModifier}</color>: Max HP \n<color={speed_color}>{movementSpeedModifier}</color>: Speed \n<color={jcolor}>{jumpSpeedModifier}</color>: Jump Speed \n<color={mx_color}>{maxJumpScalar}</color>: Max Jumps \n";
         this.description = strs;
     }
     void Start()
