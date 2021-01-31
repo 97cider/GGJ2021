@@ -19,14 +19,32 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected Color flickerColor;
 
+    [SerializeField] protected AudioClip hitSound;
+    protected AudioSource aSource;
+
     protected virtual void Awake() 
     {
+        aSource = gameObject.GetComponent<AudioSource>();
+
         this._enemyHealth = this._enemyMaxHealth;
         this._renderer = this.GetComponent<SpriteRenderer>();
     }
 
     public virtual void TakeDamage(int damage)
     {
+        if(aSource != null && hitSound != null)
+        {
+
+            aSource.Stop();
+            aSource.loop = false;
+            aSource.clip = hitSound;
+            aSource.Play();
+        }
+        else
+        {
+            Debug.Log("Something wrong playing audio for an enemy");
+        }
+
         this._enemyHealth -= damage;
         if (this._enemyHealth <= 0)
         {
