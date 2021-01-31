@@ -53,6 +53,9 @@ TextureImporter:
   - first:
       213: -5675790820437753556
     second: skellySpriteSheet_16
+  - first:
+      213: -8960957287109013594
+    second: skellySpriteSheet_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -506,6 +509,27 @@ TextureImporter:
       bones: []
       spriteID: c218268025a8b31b0800000000000000
       internalID: -5675790820437753556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skellySpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 232
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af4b6613d844a380800000000000000
+      internalID: -8960957287109013594
       vertices: []
       indices: 
       edges: []
