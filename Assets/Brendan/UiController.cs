@@ -62,13 +62,13 @@ public class UiController : MonoBehaviour
     public void setWeaponUi(Weapon w){
         weapon = w;
         weaponIcon.sprite = w.weaponSprite;
-        weaponDescription.text = w.description;
+        weaponDescription.text = w._weaponDescription;
         weaponName.text = w.name;
     }
     public void setAccessoryUi(Accessory a){
         accessory = a;
         accessoryIcon.sprite = a.accessorySprite;
-        a.getRichTextDescription();
+        //a.getRichTextDescription();
         accessoryDescription.text = a.description;
         accessoryName.text = a.AccessoryName;
 

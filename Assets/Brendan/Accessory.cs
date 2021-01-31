@@ -13,7 +13,7 @@ public class Accessory : MonoBehaviour
     public float movementSpeedModifier;
     public float jumpSpeedModifier;
     public int maxJumpScalar;
-    public int airModifier;
+    public float airModifier;
     // Player stats based modifiers
     public int maxHPModifier;
     public int baselineDamageModifier;
@@ -63,7 +63,7 @@ public class Accessory : MonoBehaviour
     }
     void Start()
     {
-        getRichTextDescription();    
+        //getRichTextDescription();    
     }
 
     // Update is called once per frame
