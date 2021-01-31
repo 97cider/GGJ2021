@@ -278,8 +278,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
         type: 3}
+      propertyPath: description
+      value: Max jumps <color=green>2</color>+1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+        type: 3}
+      propertyPath: AccessoryName
+      value: Receptor Rocket Boots
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+        type: 3}
       propertyPath: maxHPModifier
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
         type: 3}
@@ -465,8 +475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 258.6, y: -17.961}
-  m_SizeDelta: {x: 340.824, y: 46.735}
+  m_AnchoredPosition: {x: 1.491, y: 0.000024796}
+  m_SizeDelta: {x: 135.14, y: 32.919}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &189820399
 MonoBehaviour:
@@ -494,11 +504,11 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 78
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: New Text
@@ -623,8 +633,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 258.3, y: -14.897}
-  m_SizeDelta: {x: 340.824, y: 46.453}
+  m_AnchoredPosition: {x: 1.341, y: -0.0003233}
+  m_SizeDelta: {x: 135.26, y: 34.536}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241051638
 MonoBehaviour:
@@ -656,7 +666,7 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: New Text
@@ -1321,8 +1331,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
         type: 3}
+      propertyPath: description
+      value: 'Max HP: <color=green>6</color>  Move Speed: <color=red>50%</color>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
+        type: 3}
+      propertyPath: AccessoryName
+      value: Brodmann's Bulwark
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
+        type: 3}
       propertyPath: maxHPModifier
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 388cec66903a32542b44111615e5eb87, type: 3}
@@ -1431,80 +1451,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577481309}
   m_CullTransparentMesh: 1
---- !u!1001 &603063578
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 142.25914
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -53.048546
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12.998536
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346432, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346438, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: m_Name
-      value: speed (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
-        type: 3}
-      propertyPath: baselineDamageModifier
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 43c0ba7af2bd3f04bb90dc5daaef5334, type: 3}
 --- !u!1 &617299065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,8 +1694,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
         type: 3}
+      propertyPath: description
+      value: Move Speed <color=green>150%</color>  Max HP <color=Red>2</color>
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
+        type: 3}
+      propertyPath: AccessoryName
+      value: Somatosensory Slippers
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
+        type: 3}
       propertyPath: maxHPModifier
-      value: 10
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
+        type: 3}
+      propertyPath: movementSpeedModifier
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43c0ba7af2bd3f04bb90dc5daaef5334, type: 3}
@@ -1799,8 +1760,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 342.7, y: -8.165809}
-  m_SizeDelta: {x: 340.824, y: 20.654}
+  m_AnchoredPosition: {x: 0.93796, y: -8.165809}
+  m_SizeDelta: {x: 112.98, y: 20.654}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868434359
 MonoBehaviour:
@@ -1878,8 +1839,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 344.7, y: -10.946}
-  m_SizeDelta: {x: 340.824, y: 21.892}
+  m_AnchoredPosition: {x: 1.938, y: -10.946}
+  m_SizeDelta: {x: 112.32, y: 21.892}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934710965
 MonoBehaviour:
@@ -2036,6 +1997,116 @@ RectTransform:
   m_AnchoredPosition: {x: 313.63, y: -250}
   m_SizeDelta: {x: 497.02, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1013832639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: airModifier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: description
+      value: 'Move Speed: <color=green>120%</color> Jump Speed: <color=green>150%</color>
+        Max Jumps: <color=green>2</color>+1 AirModifier: <color = red>0.5</color>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: AccessoryName
+      value: Motor Maneuver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: maxHPModifier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: maxJumpScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: jumpSpeedModifier
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: movementSpeedModifier
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: baselineDamageModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649017, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_Name
+      value: space (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 142.25914
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -53.048546
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.998536
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649023, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77e4703c1dc678440a01a87a9753caea, type: 3}
 --- !u!1 &1139831310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3141,8 +3212,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
         type: 3}
+      propertyPath: description
+      value: 'Jump Speed <color=red> 50%</color> Max HP <color=Red>5</color> '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
+        type: 3}
+      propertyPath: AccessoryName
+      value: Heavy Hypothalamus
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
+        type: 3}
       propertyPath: maxHPModifier
-      value: 10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
+        type: 3}
+      propertyPath: maxJumpScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
+        type: 3}
+      propertyPath: jumpSpeedModifier
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2247485750781794369, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
         type: 3}
@@ -3232,8 +3323,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}
+      propertyPath: description
+      value: 'Max HP: <color=red>2</color>  Move Speed: <color=red>75%</color> Jump
+        Speed: <color=green>120%</color> Max Jumps: <color=green>4</color>+1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: AccessoryName
+      value: Synapse's Space
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
       propertyPath: maxHPModifier
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}

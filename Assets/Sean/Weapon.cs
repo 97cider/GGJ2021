@@ -7,12 +7,11 @@ public class Weapon : MonoBehaviour
     public Sprite weaponSprite;
     [SerializeField] private string _weaponName;
 
-    [SerializeField] private string _weaponDescription;
+    [SerializeField] public string _weaponDescription;
 
     [SerializeField] public int _weaponDamage;
     [SerializeField] private bool isProjectileWeapon;
 
-    public string description;
     [SerializeField] private GameObject _projectilePrefab;
 
     [SerializeField] public float _projectileSpeed;
