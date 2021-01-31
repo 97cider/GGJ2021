@@ -46,10 +46,9 @@ MonoBehaviour:
   weaponSprite: {fileID: 4246926894811315383, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
   _weaponName: Basic Dagger
-  _weaponDescription: Stabby stabby...
+  _weaponDescription: Stabby stabby.... 1 damage. Fast attack speed
   _weaponDamage: 1
   isProjectileWeapon: 1
-  description: 
   _projectilePrefab: {fileID: 4624066838861715780, guid: 6eb2e4573ecb21a448148a80861eeb5c,
     type: 3}
   _projectileSpeed: 18

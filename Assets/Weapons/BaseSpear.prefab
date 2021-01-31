@@ -46,10 +46,9 @@ MonoBehaviour:
   weaponSprite: {fileID: 5866494310949508119, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
   _weaponName: Sper
-  _weaponDescription: 1
+  _weaponDescription: Basic spear. 1 Damage. Slow attack speed
   _weaponDamage: 1
   isProjectileWeapon: 1
-  description: 
   _projectilePrefab: {fileID: 2030372901165887710, guid: 93388d25583f7754484a90b9625fed08,
     type: 3}
   _projectileSpeed: 12

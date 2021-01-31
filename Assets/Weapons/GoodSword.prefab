@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4558609198325713454}
   - component: {fileID: 4558609198325713455}
   m_Layer: 0
-  m_Name: Shrimp
+  m_Name: GoodSword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,11 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSprite: {fileID: 7491372936373505940, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
-  _weaponName: Shrimp
-  _weaponDescription: 
-  _weaponDamage: 1
+  _weaponName: Gold Sword
+  _weaponDescription: A better sword. 3 damage. Average attack speed
+  _weaponDamage: 3
   isProjectileWeapon: 1
-  description: 
   _projectilePrefab: {fileID: 2030372901165887710, guid: 93388d25583f7754484a90b9625fed08,
     type: 3}
   _projectileSpeed: 8
