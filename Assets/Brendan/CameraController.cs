@@ -29,6 +29,10 @@ public class CameraController : MonoBehaviour
                 _roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             }
             else{
+                if (_roomController.GetComponent<RoomController>().isNewRun){
+                    _roomController.GetComponent<RoomController>().uiController.showPause();
+                     _roomController.GetComponent<RoomController>().uiController.setHealthUi( _roomController.GetComponent<RoomController>().player.GetComponent<PlayerStats>().getMaxHP());
+                }
                 // the target destination has been reached
                 Debug.Log("has reached target");
                 hasReachedDest = true;

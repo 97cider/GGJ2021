@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 1766095839030065054}
   - component: {fileID: 7878435914440419238}
   m_Layer: 6
-  m_Name: Player 2
+  m_Name: Player3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,64 +552,6 @@ MonoBehaviour:
   shakeCameraOnAttack: 1
   shakeCameraOnHit: 1
   shakeCameraOnBossLand: 1
---- !u!1 &7878435913287537553
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7878435913287537555}
-  - component: {fileID: 7878435913287537554}
-  m_Layer: 0
-  m_Name: Shrimp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7878435913287537555
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7878435913287537553}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6982633, y: -1.883333, z: 2.7660253}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1766095839030065053}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7878435913287537554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7878435913287537553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d2f1db5ca440545ae669cace10888d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSprite: {fileID: 7491372936373505940, guid: 107fadb4990a6d44285a2ce248894947,
-    type: 3}
-  _weaponName: Shrimp
-  _weaponDescription: 
-  _weaponDamage: 3
-  isProjectileWeapon: 1
-  description: 
-  _projectilePrefab: {fileID: 2030372901165887710, guid: 93388d25583f7754484a90b9625fed08,
-    type: 3}
-  _projectileSpeed: 8
-  _projectileDuration: 0.35
-  _fireRate: 0.3
-  _forceOrientation: 0
-  projectileScale: {x: 0, y: 0, z: 0}
-  _overrideOrientation: {x: 0, y: 0}
 --- !u!1 &8850631719395010975
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,3 +610,90 @@ MonoBehaviour:
   _forceOrientation: 0
   projectileScale: {x: 0, y: 0, z: 0}
   _overrideOrientation: {x: 0, y: 0}
+--- !u!1001 &5915123318287456701
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1766095839030065053}
+    m_Modifications:
+    - target: {fileID: 4558609198325713452, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_Name
+      value: Shrimp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.6982633
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.883333
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.7660253
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ae8a82932d0deb34285b83827e602e67, type: 3}
+--- !u!4 &7878435913287537555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4558609198325713454, guid: ae8a82932d0deb34285b83827e602e67,
+    type: 3}
+  m_PrefabInstance: {fileID: 5915123318287456701}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7878435913287537554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4558609198325713455, guid: ae8a82932d0deb34285b83827e602e67,
+    type: 3}
+  m_PrefabInstance: {fileID: 5915123318287456701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d2f1db5ca440545ae669cace10888d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

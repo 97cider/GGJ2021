@@ -21,11 +21,14 @@ public class UiController : MonoBehaviour
     
     public GameObject health;
     public GameObject hp;
-
+    public GameObject pause;
     public Canvas canvas;
     // Start is called before the first frame update
     public bool playerLoaded;
+    public void showPause(){
+        canvas.GetComponent<GameManager>().ToggleGameState();
 
+    }
     public void setRoomsCompleted(int r){
         this.roomsCompleted.text = (string) r.ToString();
     }
@@ -55,6 +58,33 @@ public class UiController : MonoBehaviour
         }
     }
     // Update is called once per frame
+    public void setWeaponUi(Weapon w){
+        weapon = w;
+        weaponIcon.sprite = w.weaponSprite;
+        weaponDescription.text = w.description;
+        weaponName.text = w.name;
+    }
+    public void setAccessoryUi(Accessory a){
+        accessory = a;
+        accessoryIcon.sprite = a.accessorySprite;
+        a.getRichTextDescription();
+        accessoryDescription.text = a.description;
+        accessoryName.text = a.AccessoryName;
+
+    }
+    public void setHealthUi(int h){
+        // Nuke the current health ui
+        Debug.LogWarning($"Current Health Children: {health.transform.childCount}");
+        for (int i = 0; i < health.transform.childCount; i++){
+            Debug.LogWarning($"Destroying: {health.transform.GetChild(i)}");
+            Destroy(health.transform.GetChild(i).gameObject);
+        }
+        // Set the current health value
+        for (int i = 0; i < h; i++){
+            var thp = Instantiate(hp, health.transform);
+            thp.transform.localScale = new Vector3(1,1,1);
+        }
+    }
     void Update()
     {
         if (player != null && !playerLoaded){
@@ -69,19 +99,10 @@ public class UiController : MonoBehaviour
 
             // Weapon icon setting
             Weapon w = player.GetComponent<PlayerStats>().GetWeapon();
-
-            weapon = w;
-            weaponIcon.sprite = w.weaponSprite;
-            weaponDescription.text = w.description;
-            weaponName.text = w.name;
-
+            setWeaponUi(w);
             // Accessory icon setting
             Accessory a = player.GetComponent<PlayerStats>().getCurrentAccessory();
-            accessory = a;
-            accessoryIcon.sprite = a.accessorySprite;
-            a.getRichTextDescription();
-            accessoryDescription.text = a.description;
-            accessoryName.text = a.AccessoryName;
+            setAccessoryUi(a);
 
 
         }

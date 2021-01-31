@@ -24,7 +24,10 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private Vector2 _orientation;
 
-
+    public void resetStats(){
+        this._maxHealth = 3;
+        this._currentHealth = 3;
+    }
     public int getCompletedRooms(){
         return this._completedRooms;
     }

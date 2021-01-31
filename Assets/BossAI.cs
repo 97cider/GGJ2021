@@ -182,6 +182,7 @@ public class BossAI : Enemy
     {
         StopAllCoroutines();
         base.Die();
+        Destroy(this.gameObject);
     }
 
     private IEnumerator DamageFlicker()

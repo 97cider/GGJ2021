@@ -11,6 +11,7 @@ public class RoomController : MonoBehaviour
     public GameObject _exitTest;
     public List<GameObject> _bossRooms;
     public Camera mainCamera;
+    public bool isNewRun;
     private Vector3 leftMost, rightMost, downMost;
     public List<GameObject> _LoadedRooms;
     public UiController uiController;
@@ -21,6 +22,7 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        this.isNewRun = true;
         runsCompleted =0;
         uiController.setRoomsCompleted(0);
         uiController.setRunsCompleted(0);
@@ -53,6 +55,7 @@ public class RoomController : MonoBehaviour
         leftMost = new Vector3(0,0,zoffset);
         rightMost = new Vector3(0,0,zoffset);
         downMost = new Vector3(0,0,zoffset);
+        uiController.setHealthUi(0);
     }
     // Update is called once per frame
     void Update()
@@ -87,14 +90,33 @@ public class RoomController : MonoBehaviour
                 new_level = this.pickRandomRoom();
             }
             Debug.LogError(r);
-            if (r == 4){
+            if (r % 4 == 0 && r != 0){
                 Debug.LogError("SPAWN BOSS");
                 new_level = _bossRooms[runsCompleted];
                 _nextMap = new_level;
             }
             if ((r) % 5 == 0 && r != 0){
+                this.isNewRun =true;
                 runsCompleted = runsCompleted+1;
                 uiController.setRunsCompleted(runsCompleted);
+                //Reset player run stats
+                player.GetComponent<CharacterController2D>().resetStats();
+                player.GetComponent<PlayerStats>().resetStats();
+
+                Accessory a = itemController.getRandomAccessory();
+                Weapon w = itemController.getRandomWeapon();
+                player.GetComponent<PlayerStats>().setCurrentAccessory(a);
+                player.GetComponent<PlayerStats>().EquipWeapon(w);
+                
+                player.GetComponent<PlayerStats>().setMaxHP(a.maxHPModifier);
+                player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar);
+                uiController.setWeaponUi(w);
+                uiController.setAccessoryUi(a);
+
+                //Update the health ui to show the new change
+            }
+            else{
+                isNewRun = false;
             }
             if (_currentMap.GetComponent<Room>().usedExit == exitType.Left){
                 // We exit stage left. Spawn a room to the left, pan to it, and then set the current room to that room

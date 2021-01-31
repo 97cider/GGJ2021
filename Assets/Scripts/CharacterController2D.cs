@@ -150,6 +150,11 @@ public class CharacterController2D : MonoBehaviour
         
     }
 
+    public void resetStats(){
+         m_JumpForce =400f;
+         horizontalMovementSpeed = .75f;
+         maxJumps = 2;
+    }
     bool AnimatorIsPlaying(string stateName)
     {
         return Animator.GetCurrentAnimatorStateInfo(0).IsName(stateName);
