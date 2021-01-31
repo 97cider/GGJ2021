@@ -114,6 +114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a4ceaa1095548448d792a4563bdb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: 0
+  _enemyMaxHealth: 100
+  _enemyContactDamage: 2
+  DieEvents:
+    m_PersistentCalls:
+      m_Calls: []
   player: {fileID: 0}
   maxDistanceToPlayer: 5
   enemySpeed: 5

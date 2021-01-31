@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeAI : MonoBehaviour
+public class SlimeAI : Enemy
 {
     private Rigidbody2D rb;
 
@@ -17,8 +17,6 @@ public class SlimeAI : MonoBehaviour
 
     protected Vector2 direction;
 
-
-
     [SerializeField] private float jumpForce;
     [SerializeField] private float idleTime;
 
@@ -28,8 +26,10 @@ public class SlimeAI : MonoBehaviour
     [SerializeField] float k_GroundedRadius;
 
     // Start is called before the first frame update
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         aiState = State.Idle;
@@ -41,12 +41,6 @@ public class SlimeAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("T"))
-        {
-            CanMove(!canMove);
-            Debug.Log("changing can move");
-        }
-
         if (!inAction && canMove)
         {
             DecideNewAction();

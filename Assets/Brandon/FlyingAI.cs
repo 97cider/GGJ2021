@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class FlyingAI : MonoBehaviour
+public abstract class FlyingAI : Enemy
 {
     [SerializeField] protected GameObject player;
 
@@ -20,8 +20,10 @@ public abstract class FlyingAI : MonoBehaviour
     [SerializeField] private float moveTime;
 
     // Start is called before the first frame update
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake(); 
+
         player = GameObject.FindGameObjectWithTag("Player");
         aiState = State.Idle;
         inAction = false;
@@ -32,12 +34,6 @@ public abstract class FlyingAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("T"))
-        {
-            CanMove(!canMove);
-            Debug.Log("changing can move");
-        }
-
         if(!inAction && canMove)
         {
             DecideNewAction();
