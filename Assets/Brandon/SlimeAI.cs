@@ -71,6 +71,7 @@ public class SlimeAI : Enemy
                     //OnLandEvent.Invoke();
                     //Debug.Log("Playing a land animation");
                     //Animator.Play(landAnimationName);
+                    this.rb.velocity = Vector2.zero;
                 }
             }
         }
@@ -174,4 +175,17 @@ public class SlimeAI : Enemy
             inAction = false;
         }
     }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            PlayerStats player = other.gameObject.GetComponent<PlayerStats>();
+            if(player != null)
+            {
+                player.TakeDamage(this._enemyContactDamage);
+            }
+        }
+    }
+
 }
