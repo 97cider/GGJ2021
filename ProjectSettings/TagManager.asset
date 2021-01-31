@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Exit
   - Enemy
+  - AudioManager
   layers:
   - Default
   - TransparentFX
