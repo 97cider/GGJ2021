@@ -54,6 +54,7 @@ public class RoomController : MonoBehaviour
             player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar, a.airModifier);
         
             player.transform.position = t.position;
+            uiController.setRunsCompleted(player.GetComponent<PlayerStats>().runsCompleted);
             //player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
         leftMost = new Vector3(0,0,zoffset);
         rightMost = new Vector3(0,0,zoffset);
