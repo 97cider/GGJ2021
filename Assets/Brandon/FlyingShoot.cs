@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlyingShoot : FlyingAI
 {
     [SerializeField] private float projSpeed;
-    [SerializeField] private float projDamage;
+    [SerializeField] private int projDamage;
     [SerializeField] private float projDuration;
     [SerializeField] private bool pierceTargets;
     [SerializeField] private bool pierceWalls;

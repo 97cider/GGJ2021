@@ -12,7 +12,6 @@ public class TooltipRunner : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Accessory accessory;
     public Weapon weapon;
 
-    private bool isShowing;
     void Start()
     {
     }
@@ -20,28 +19,27 @@ public class TooltipRunner : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     // Update is called once per frame
     void Update()
     {
-        if(accessory == null){
-            accessory = ui.accessory;
-        }
-        if (weapon == null){
-            weapon = ui.weapon;
-        }
-        if (mouse_over){
-            if (!isShowing){
+    //     if(accessory == null){
+    //         accessory = ui.accessory;
+    //     }
+    //     if (weapon == null){
+    //         weapon = ui.weapon;
+    //     }
+    //     if (mouse_over){
+    //         if (!isShowing){
 
-                //Get the current item or accessory
-                if (accessory != null){
-                    // Hovering over an accessory panel
-                    Tooltip.ShowToolTip(this.gameObject, accessory.description);
-                }
-                else {
-                    // Hovering over a weapons panel
-                    Tooltip.ShowToolTip(this.gameObject, weapon.description);
-                }
-                Tooltip.ShowToolTip(this.gameObject, "In");
-                isShowing = true;
-            }
-        }
+    //             //Get the current item or accessory
+    //             if (accessory != null){
+    //                 // Hovering over an accessory panel
+    //                 Tooltip.ShowToolTip(this.gameObject, accessory.description);
+    //             }
+    //             else {
+    //                 // Hovering over a weapons panel
+    //                 Tooltip.ShowToolTip(this.gameObject, weapon.description);
+    //             }
+    //         }
+    //     }
+    // }
     }
     public void OnPointerEnter(PointerEventData eventData) {
         mouse_over = true;
@@ -50,6 +48,5 @@ public class TooltipRunner : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         mouse_over = false;
         Debug.Log("EXIT");
         Tooltip.HideToolTip();
-        isShowing = false;
     }
 }

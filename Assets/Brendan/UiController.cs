@@ -29,14 +29,18 @@ public class UiController : MonoBehaviour
     }
 
     public void updateCurrentHealth(){
-        for(int i = (int) player.GetComponent<PlayerStats>().getMaxHP()-1; i > player.GetComponent<PlayerStats>().getCurrentHp()-1; i--){
+        int p = player.GetComponent<PlayerStats>().getMaxHP();
+        int c = player.GetComponent<PlayerStats>().getCurrentHp();
+        for (int i = p-1; i > c-1; i--){
             var thp = health.transform.GetChild(i);
             thp.GetChild(1).GetComponent<Image>().enabled = false;
         }
     }
     public void updateHealth(){
+        int p = player.GetComponent<PlayerStats>().getMaxHP();
+
         Debug.Log($"Current max hp via uicont: {player.GetComponent<PlayerStats>().getMaxHP()}");
-        for(int i =0; i < (int) player.GetComponent<PlayerStats>().getMaxHP(); i++){
+        for(int i =0; i < p; i++){
             var thp = Instantiate(hp, health.transform);
             thp.transform.localScale = new Vector3(1,1,1);
         }

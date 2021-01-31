@@ -15,8 +15,8 @@ public class Accessory : MonoBehaviour
     public int maxJumpScalar;
 
     // Player stats based modifiers
-    public float maxHPModifier;
-    public float baselineDamageModifier;
+    public int maxHPModifier;
+    public int baselineDamageModifier;
     public void getRichTextDescription(){
         var mhp_color = "";
         var speed_color = "";

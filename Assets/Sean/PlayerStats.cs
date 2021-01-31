@@ -7,8 +7,8 @@ public class PlayerStats : MonoBehaviour
 {
 
     public bool canMove;
-    [SerializeField] private float _currentHealth;
-    private float _maxHealth;
+    [SerializeField] private int _currentHealth;
+    private int _maxHealth = 1000;
 
     [SerializeField] private float _movementSpeed;
 
@@ -30,10 +30,10 @@ public class PlayerStats : MonoBehaviour
     private PlayerEffectsController _effects;
 
 
-    public float getMaxHP(){
+    public int getMaxHP(){
         return this._maxHealth;
     }
-    public float getCurrentHp(){
+    public int getCurrentHp(){
         return this._currentHealth;
     }
     void Awake()
@@ -42,19 +42,20 @@ public class PlayerStats : MonoBehaviour
         if(playerdieEvent == null){
             playerdieEvent = new UnityEvent();
         }
-    }
-    public void Start()
-    {
-        if(_currentAccessory != null) 
+        Debug.LogWarning("INIT!");
+        if (_currentAccessory != null)
         {
             this._maxHealth = _currentAccessory.maxHPModifier;
             Debug.Log($"Max health via null chek: {this._maxHealth}");
+            this._currentHealth = this._maxHealth;
+            // Modify properties based on current accessory
+            var w = GetWeapon();
+            this.EquipWeapon(w);
         }
-        this._currentHealth = this._maxHealth;
-        // Modify properties based on current accessory
-        var w = GetWeapon();
-        this.EquipWeapon(w);
-
+    }
+    public void Start()
+    {
+  
     }
 
     public Weapon GetWeapon()
@@ -83,7 +84,7 @@ public class PlayerStats : MonoBehaviour
     private void Update() {
         //Debug.Log($"Current Max Hp: {this._maxHealth}");
     }    
-    public void TakeDamage(float damage)
+    public void TakeDamage( int damage)
     {
         this._currentHealth -= damage;
         StartCoroutine(DamageFlicker());

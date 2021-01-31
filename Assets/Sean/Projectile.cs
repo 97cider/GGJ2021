@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     public float speed;
     public Vector2 direction;
 
-    public float damage;
+    public int damage;
 
     public bool hasDuration; 
 
