@@ -47,7 +47,7 @@ MonoBehaviour:
     type: 3}
   _weaponName: Shrimp
   _weaponDescription: 
-  _weaponDamage: 3
+  _weaponDamage: 2
   isProjectileWeapon: 1
   description: 
   _projectilePrefab: {fileID: 2030372901165887710, guid: 93388d25583f7754484a90b9625fed08,
