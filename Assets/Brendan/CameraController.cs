@@ -39,10 +39,6 @@ public class CameraController : MonoBehaviour
                 _roomController.GetComponent<RoomController>().movePlayer();
                 _roomController.GetComponent<RoomController>().player.GetComponent<PlayerStats>().canMove = true;
                 _roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                //_roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-                //_roomController.GetComponent<RoomController>().player.GetComponent<CharacterController2D>().m_Rigidbody2D.velocity = new Vector2(0,0);
-                //var next_level = _roomController.GetComponent<RoomController>().setNextLevel();
-                //_roomController.scene.GetComponent<SceneHandler>().tileMap.GetComponent<Room>().nextLevel = next_level;
                 targetLocation = null;
                 hasReachedDest = false;
             }
