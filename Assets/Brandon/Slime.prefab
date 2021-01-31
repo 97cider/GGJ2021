@@ -139,7 +139,7 @@ MonoBehaviour:
     m_Bits: 23
   m_GroundCheck: {fileID: 6501778967432871545}
   k_GroundedRadius: 0.05
-  deathObject: {fileID: 7945052889362973930, guid: 03ae87abb4b00ba4390f57868d42a508,
+  deathObject: {fileID: 4386178369666743544, guid: 0965f25a3fe8d594cb2ba56836e6334b,
     type: 3}
 --- !u!61 &62066265181815350
 BoxCollider2D:

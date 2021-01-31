@@ -56,6 +56,9 @@ TextureImporter:
   - first:
       213: -8960957287109013594
     second: skellySpriteSheet_17
+  - first:
+      213: -8404926780335516169
+    second: skellySpriteSheet_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -181,10 +184,10 @@ TextureImporter:
       name: skellySpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 243
-        width: 12
-        height: 11
+        x: 41
+        y: 233
+        width: 14
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +205,10 @@ TextureImporter:
       name: skellySpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 6
-        y: 246
-        width: 9
-        height: 8
+        x: 5
+        y: 245
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,57 +223,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skellySpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 241
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d2cd99dc09863dc0800000000000000
-      internalID: -3659586958908341548
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skellySpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 236
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 433f7c53aed0c3410800000000000000
-      internalID: 1458055678937002804
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: skellySpriteSheet_5
       rect:
         serializedVersion: 2
         x: 21
-        y: 231
+        y: 237
         width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 10
+      alignment: 9
+      pivot: {x: 0.5237096, y: 0.49407768}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,10 +247,10 @@ TextureImporter:
       name: skellySpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 21
+        x: 20
         y: 224
-        width: 7
-        height: 5
+        width: 9
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +268,10 @@ TextureImporter:
       name: skellySpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 10
-        y: 226
-        width: 8
-        height: 7
+        x: 1
+        y: 224
+        width: 10
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +289,10 @@ TextureImporter:
       name: skellySpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 2
-        y: 230
-        width: 7
-        height: 7
+        x: 0
+        y: 235
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -522,7 +483,7 @@ TextureImporter:
         width: 19
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -530,6 +491,27 @@ TextureImporter:
       bones: []
       spriteID: 6af4b6613d844a380800000000000000
       internalID: -8960957287109013594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skellySpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 246
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f51feedf93bb5b80800000000000000
+      internalID: -8404926780335516169
       vertices: []
       indices: 
       edges: []
