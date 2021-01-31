@@ -1813,9 +1813,14 @@ MonoBehaviour:
   - {fileID: 3701746439977250055, guid: 0a1bd7681bd538541a4437524a3ef2f4, type: 3}
   - {fileID: 3701746439977250055, guid: 70811e391f8056d43bb0c5d78a2db7ba, type: 3}
   - {fileID: 7528543715838590504, guid: 50a71492d57727d4c970807dc57a9f38, type: 3}
-  - {fileID: 6126040958105494156, guid: acf67b0037aa0a649a962790f117399c, type: 3}
   - {fileID: 4718280354288599791, guid: cb29c12ebe031be40b889a5f45ab1409, type: 3}
   - {fileID: 7940730822993984675, guid: f4b1ef148c6313f43b2005900456a4cd, type: 3}
+  - {fileID: 6461499355795650753, guid: fc604131d6a1ca54b80c5f9d2c2b2264, type: 3}
+  - {fileID: 4681026615690616827, guid: 047d52a1950b0cf42a733adad4ebc944, type: 3}
+  - {fileID: 8368554045261160289, guid: 656fc2923c53c8442a419d297931ec15, type: 3}
+  - {fileID: 3701746439977250055, guid: 59a799a85b7d56249a7f4bd55dc96395, type: 3}
+  - {fileID: 3701746439977250055, guid: 4f17e179d0a51fb4ca4cf5cdcb8fac5f, type: 3}
+  - {fileID: 3701746439977250055, guid: 7edefe9e2b3a1c94486be8bd48000d54, type: 3}
   uiController: {fileID: 389444909}
   player: {fileID: 72064872}
   itemController: {fileID: 478625675}
@@ -2375,7 +2380,7 @@ PrefabInstance:
         type: 3}
       propertyPath: description
       value: 'Jump Speed <color=red> 25%</color> Max HP <color=green>6</color> Max
-        Jumps: <color=green>4</color>+1'
+        Jumps: <color=green>15</color>+1'
       objectReference: {fileID: 0}
     - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
         type: 3}
@@ -2390,7 +2395,7 @@ PrefabInstance:
     - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
         type: 3}
       propertyPath: maxJumpScalar
-      value: 4
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
         type: 3}
