@@ -208,12 +208,12 @@ MonoBehaviour:
   _enemyHealth: 20
   _enemyMaxHealth: 20
   _enemyContactDamage: 1
+  _renderer: {fileID: 0}
   DieEvents:
     m_PersistentCalls:
       m_Calls: []
   flickerColor: {r: 1, g: 1, b: 1, a: 0}
   moveSpeed: 0
-  skeletonDeathPrefab: {fileID: 0}
   playerDetectRange: 100
   attackCooldown: 3
   _shotForce: 30
@@ -282,6 +282,8 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1
+  deathObject: {fileID: 2270596729616651118, guid: ed9bc0c4629af5e4c985e5649b5bfe38,
+    type: 3}
   _mc: {fileID: 0}
 --- !u!95 &2846444477109990991
 Animator:

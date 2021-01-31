@@ -9,8 +9,6 @@ public class BossAI : Enemy
 
     private int moveDir = 1;
 
-    public GameObject skeletonDeathPrefab;
-
     private GameObject _playerTarget;
 
     [Header("Attacks")]
@@ -54,6 +52,8 @@ public class BossAI : Enemy
     public UnityEvent landEvent;
 
     [SerializeField] private LayerMask m_WhatIsGround;
+
+    public GameObject deathObject;
 
     public PlayerStats _mc;
 
@@ -175,6 +175,7 @@ public class BossAI : Enemy
     {
         StopAllCoroutines();
         base.Die();
+        Instantiate(this.deathObject, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 
