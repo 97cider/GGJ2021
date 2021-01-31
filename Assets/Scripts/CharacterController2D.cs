@@ -62,10 +62,11 @@ public class CharacterController2D : MonoBehaviour
     public UnityEvent OnLandEvent;
     public UnityEvent OnHeavyLandEvent;
 
-    public void setCCStats(float jfm, float hms, int mj){
+    public void setCCStats(float jfm, float hms, int mj, int ac){
             m_JumpForce = m_JumpForce * jfm;
             horizontalMovementSpeed =  horizontalMovementSpeed * hms;
             maxJumps = maxJumps + mj;
+            m_inAirModifier = m_inAirModifier * ac;
     }
     private void Awake()
     {

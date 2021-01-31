@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private float _movementSpeed;
 
+    public int runsCompleted;
     [SerializeField] private float _jumpModifier;
 
     [SerializeField] private Weapon _currentWeapon;
@@ -88,14 +89,10 @@ public class PlayerStats : MonoBehaviour
 
     public void EquipWeapon(Weapon w)
     {
-        if (this._currentAccessory)
-        {
-            w.modifyWeaponStats(this._currentAccessory);
-        }
-
         _weaponRenderer.sprite = w.weaponSprite;
 
         this._currentWeapon = w;
+        Debug.LogWarning($"IN EQUIP: {this._currentWeapon._weaponDamage}");
     }
     public void changeMove(){
         this.canMove = !this.canMove;

@@ -1,63 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1695061136354074874
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8157600537618701765}
-  - component: {fileID: 117596993663871298}
-  m_Layer: 0
-  m_Name: Weapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8157600537618701765
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695061136354074874}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.47753572, y: -1.1207843, z: -0.67316896}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8491463938612068088}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &117596993663871298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695061136354074874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4d2f1db5ca440545ae669cace10888d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponSprite: {fileID: -1315175341226311843, guid: 107fadb4990a6d44285a2ce248894947,
-    type: 3}
-  _weaponName: Stone Sward
-  _weaponDescription: sward
-  _weaponDamage: 1
-  isProjectileWeapon: 1
-  description: 
-  _projectilePrefab: {fileID: 2030372901165887710, guid: 93388d25583f7754484a90b9625fed08,
-    type: 3}
-  _projectileSpeed: 0
-  _projectileDuration: 0
-  _fireRate: 0
-  _forceOrientation: 0
-  projectileScale: {x: 0, y: 0, z: 0}
-  _overrideOrientation: {x: 0, y: 0}
 --- !u!1 &8491463938283946719
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +120,6 @@ Transform:
   - {fileID: 8491463938958185543}
   - {fileID: 8491463938283946716}
   - {fileID: 8491463938849043011}
-  - {fileID: 8157600537618701765}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -392,6 +333,7 @@ MonoBehaviour:
   shakeCameraOnLand: 1
   shakeCameraOnAttack: 1
   shakeCameraOnHit: 1
+  shakeCameraOnBossLand: 0
 --- !u!1 &8491463938849043012
 GameObject:
   m_ObjectHideFlags: 0

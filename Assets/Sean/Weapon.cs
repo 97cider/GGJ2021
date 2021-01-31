@@ -9,14 +9,13 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] private string _weaponDescription;
 
-    [SerializeField] private int _weaponDamage;
-
+    [SerializeField] public int _weaponDamage;
     [SerializeField] private bool isProjectileWeapon;
 
     public string description;
     [SerializeField] private GameObject _projectilePrefab;
 
-    [SerializeField] private float _projectileSpeed;
+    [SerializeField] public float _projectileSpeed;
 
     [SerializeField] private float _projectileDuration;
 
@@ -40,10 +39,6 @@ public class Weapon : MonoBehaviour
 
     public void modifyWeaponStats(Accessory a){
         // Transfer over properties, multiplicitavely.
-        if (a != null)
-        {
-            _weaponDamage =_weaponDamage * a.baselineDamageModifier;
-        }
     }
     public float GetWeaponCooldown()
     {

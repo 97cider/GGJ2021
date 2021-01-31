@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Exit;
 public class RoomController : MonoBehaviour
 {
@@ -44,11 +45,13 @@ public class RoomController : MonoBehaviour
             Accessory a = itemController.getRandomAccessory();
             Weapon w = itemController.getRandomWeapon();
 
+            Debug.LogWarning($"STATS OF RANDO: {w._weaponDamage}");
+
             player.GetComponent<PlayerStats>().setCurrentAccessory(a);
             player.GetComponent<PlayerStats>().EquipWeapon(w);
             
             player.GetComponent<PlayerStats>().setMaxHP(a.maxHPModifier);
-            player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar);
+            player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar, a.airModifier);
         
             player.transform.position = t.position;
             //player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
@@ -81,11 +84,14 @@ public class RoomController : MonoBehaviour
             //_currentMap = _nextMap;
             var new_level = this.pickRandomRoom();
             //Remember to do check
+            var runs = player.GetComponent<PlayerStats>().runsCompleted;
             var r = player.GetComponent<PlayerStats>().getCompletedRooms();
             player.GetComponent<PlayerStats>().setCompletedRooms(r+1);
             r= player.GetComponent<PlayerStats>().getCompletedRooms();
             uiController.setRoomsCompleted(r);
-            Debug.LogWarning(runsCompleted);
+            if (runs == 4){
+                Debug.LogError("You win");
+            }
             while (new_level == _currentMap){
                 new_level = this.pickRandomRoom();
             }
@@ -99,6 +105,10 @@ public class RoomController : MonoBehaviour
                 r= player.GetComponent<PlayerStats>().getCompletedRooms();
                 this.isNewRun =true;
                 runsCompleted = runsCompleted+1;
+                if(runsCompleted == 5){
+                    SceneManager.LoadScene("WinScene");
+                }
+                player.GetComponent<PlayerStats>().runsCompleted = runsCompleted;
                 uiController.setRunsCompleted(runsCompleted);
                 //Reset player run stats
                 player.GetComponent<CharacterController2D>().resetStats();
@@ -110,9 +120,10 @@ public class RoomController : MonoBehaviour
                 player.GetComponent<PlayerStats>().EquipWeapon(w);
                 
                 player.GetComponent<PlayerStats>().setMaxHP(a.maxHPModifier);
-                player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar);
+                player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar, a.airModifier);
                 uiController.setWeaponUi(w);
                 uiController.setAccessoryUi(a);
+
 
                 //Update the health ui to show the new change
                 r = 0;

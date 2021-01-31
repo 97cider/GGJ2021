@@ -273,8 +273,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
         type: 3}
+      propertyPath: airModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+        type: 3}
       propertyPath: maxHPModifier
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657697144932160369, guid: 7e82c4c387a091c46bb21813cf1534ea,
+        type: 3}
+      propertyPath: baselineDamageModifier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1657697144932160374, guid: 7e82c4c387a091c46bb21813cf1534ea,
         type: 3}
@@ -1202,6 +1212,10 @@ MonoBehaviour:
   _exitTest: {fileID: 0}
   _bossRooms:
   - {fileID: 6966212189547135930, guid: 758a3207b0499f74abeec4ff51eeca7e, type: 3}
+  - {fileID: 6966212189547135930, guid: 758a3207b0499f74abeec4ff51eeca7e, type: 3}
+  - {fileID: 6966212189547135930, guid: 758a3207b0499f74abeec4ff51eeca7e, type: 3}
+  - {fileID: 6966212189547135930, guid: 758a3207b0499f74abeec4ff51eeca7e, type: 3}
+  - {fileID: 6966212189547135930, guid: 758a3207b0499f74abeec4ff51eeca7e, type: 3}
   mainCamera: {fileID: 1742492649}
   isNewRun: 0
   _LoadedRooms:
@@ -1226,6 +1240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availableWeapons:
   - {fileID: 4558609198325713455, guid: ae8a82932d0deb34285b83827e602e67, type: 3}
+  - {fileID: 232099161527533901, guid: 274438f7558bf6a4ea7d0d980ca46be4, type: 3}
   availableModifications: []
   availableAccessories:
   - {fileID: 716240023}
@@ -1299,6 +1314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: slow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
+        type: 3}
+      propertyPath: airModifier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5979378337400141423, guid: 388cec66903a32542b44111615e5eb87,
         type: 3}
@@ -1478,6 +1498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: speed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
+        type: 3}
+      propertyPath: baselineDamageModifier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43c0ba7af2bd3f04bb90dc5daaef5334, type: 3}
@@ -1716,6 +1741,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
+        type: 3}
+      propertyPath: airModifier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5088602247251346439, guid: 43c0ba7af2bd3f04bb90dc5daaef5334,
         type: 3}
@@ -2728,6 +2758,12 @@ PrefabInstance:
       propertyPath: _projectileDuration
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8491463938612068039, guid: fa59b52d5550e2a42a224a9c6f5e3182,
+        type: 3}
+      propertyPath: _currentWeapon
+      value: 
+      objectReference: {fileID: 4558609198325713455, guid: ae8a82932d0deb34285b83827e602e67,
+        type: 3}
     - target: {fileID: 8491463938612068088, guid: fa59b52d5550e2a42a224a9c6f5e3182,
         type: 3}
       propertyPath: m_RootOrder
@@ -3101,6 +3137,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
         type: 3}
+      propertyPath: airModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
+        type: 3}
       propertyPath: maxHPModifier
       value: 10
       objectReference: {fileID: 0}
@@ -3187,8 +3228,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}
+      propertyPath: airModifier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
       propertyPath: maxHPModifier
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+        type: 3}
+      propertyPath: baselineDamageModifier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1423451440003649017, guid: 77e4703c1dc678440a01a87a9753caea,
         type: 3}

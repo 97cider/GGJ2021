@@ -25,6 +25,8 @@ public class SlimeAI : Enemy
 
     [SerializeField] float k_GroundedRadius;
 
+    [SerializeField] protected GameObject deathObject;
+
     // Start is called before the first frame update
     protected override void Awake()
     {
@@ -188,4 +190,11 @@ public class SlimeAI : Enemy
         }
     }
 
+    public override void Die()
+    {
+        StopAllCoroutines();
+        Instantiate(deathObject, this.transform.position, Quaternion.identity);
+        base.Die();
+        Destroy(this.gameObject);
+    }
 }

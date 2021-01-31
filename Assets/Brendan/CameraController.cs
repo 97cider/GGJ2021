@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
             }
             else{
                 if (_roomController.GetComponent<RoomController>().isNewRun){
-                    _roomController.GetComponent<RoomController>().uiController.showPause();
+                    _roomController.GetComponent<RoomController>().uiController.showPause("Your next loadout is:");
                      _roomController.GetComponent<RoomController>().uiController.setHealthUi( _roomController.GetComponent<RoomController>().player.GetComponent<PlayerStats>().getMaxHP());
                 }
                 // the target destination has been reached

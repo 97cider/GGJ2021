@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
@@ -66,6 +67,8 @@ public class GameManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            this.pauseMenu.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Game is paused";
+            this.pauseMenu.transform.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Game is paused";
             ToggleGameState();
         }
     }

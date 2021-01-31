@@ -54,6 +54,7 @@ public class PlayerCombat : MonoBehaviour
                     _effects.ShakeCameraOnAttack();
                     weaponCooldown = maxCooldown;
                     print("Hey we attacked with " + this._currentWeapon.GetWeaponName());
+                    print($"Hey we should be doing {this._currentWeapon._weaponDamage}");
                     Vector2 orientation = new Vector2(this._projectileOrigin.localPosition.x / Mathf.Abs(this._projectileOrigin.localPosition.x), 0.0f);
                     _currentWeapon.Attack(this._projectileOrigin.position, orientation);
                 }
