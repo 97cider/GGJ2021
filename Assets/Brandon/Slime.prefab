@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6501778966983000976}
   - component: {fileID: 6501778966983000982}
   - component: {fileID: 6501778966983000978}
-  - component: {fileID: 6501778966983000977}
+  - component: {fileID: 62066265181815350}
+  - component: {fileID: 350601090}
   m_Layer: 8
   m_Name: Slime
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6501778966983000983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.14, y: 0.71, z: 0}
-  m_LocalScale: {x: 0.57, y: 0.57, z: 0.57}
+  m_LocalScale: {x: 1, y: 1, z: 0.51}
   m_Children:
   - {fileID: 6501778967342301021}
   - {fileID: 6501778967432871545}
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 944d6aa9316e7f64fb97d55dc0adbca5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,10 +76,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f,
+  m_SortingOrder: 32
+  m_Sprite: {fileID: 3693006663427263605, guid: 2c93430b641c2f44094867ab8457afb9,
     type: 3}
-  m_Color: {r: 0, g: 1, b: 0.098634005, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,12 +122,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb796687aba15774f9059b318ce8f92a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHealth: 0
-  _enemyMaxHealth: 100
-  _enemyContactDamage: 10
+  _enemyHealth: 2
+  _enemyMaxHealth: 2
+  _enemyContactDamage: 1
+  _renderer: {fileID: 0}
   DieEvents:
     m_PersistentCalls:
       m_Calls: []
+  flickerColor: {r: 1, g: 1, b: 1, a: 1}
   player: {fileID: 0}
   m_Grounded: 0
   jumpForce: 200
@@ -136,8 +139,8 @@ MonoBehaviour:
     m_Bits: 23
   m_GroundCheck: {fileID: 6501778967432871545}
   k_GroundedRadius: 0.05
---- !u!58 &6501778966983000977
-CircleCollider2D:
+--- !u!61 &62066265181815350
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -149,9 +152,38 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.15}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 0.71}
+  m_EdgeRadius: 0
+--- !u!95 &350601090
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501778966983000983}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6fa8ef86b65478546a2ecd4fb8587931, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6501778967342301090
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6501778967342301090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6501778966983000979}
@@ -233,7 +265,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6501778967432871550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.498, z: 0}
+  m_LocalPosition: {x: 0, y: -0.231, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6501778966983000979}

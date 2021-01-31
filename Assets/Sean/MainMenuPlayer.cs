@@ -19,6 +19,10 @@ public class MainMenuPlayer : MonoBehaviour
 
     public SpriteRenderer weaponRenderer;
 
+    public float chanceForSkelly = 0.2f;
+
+    public GameObject skelly;
+
     private float currentHoldTime;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +41,16 @@ public class MainMenuPlayer : MonoBehaviour
         // update weapon sprites
         int index = Random.Range(0, weaponSprites.Count);
         weaponRenderer.sprite = weaponSprites[index];
+
+        float skellySpawn = Random.Range(0.0f, 1.0f);
+        if (skellySpawn <= chanceForSkelly)
+        {
+            skelly.SetActive(true);
+        }
+        else
+        {
+            skelly.SetActive(false);
+        }
     }
 
     // Update is called once per frame

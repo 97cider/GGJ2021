@@ -12,12 +12,16 @@ public abstract class FlyingAI : Enemy
     protected bool inAction;
     protected bool canMove;
 
+    protected bool facingLeft = true;
+
     protected Vector2 direction;
 
     [SerializeField] private float maxDistanceToPlayer;
     [SerializeField] private float enemySpeed;
     [SerializeField] private float idleTime;
     [SerializeField] private float moveTime;
+
+    protected Animator animator;
 
     // Start is called before the first frame update
     protected override void Awake()
@@ -29,6 +33,14 @@ public abstract class FlyingAI : Enemy
         inAction = false;
         direction = new Vector2(1, 0);
         canMove = true;
+        animator = this.GetComponent<Animator>();
+        _renderer = this.GetComponent<SpriteRenderer>();
+    }
+    private void FlipCharacter()
+    {
+        Vector3 skellyScale = this.transform.localScale;
+        skellyScale.x *= -1;
+        this.transform.localScale = skellyScale;
     }
 
     // Update is called once per frame
@@ -39,6 +51,23 @@ public abstract class FlyingAI : Enemy
             DecideNewAction();
             inAction = true;
             StartCorrectAction();
+        }
+
+        if(player.transform.position.x < this.transform.position.x)
+        {
+            if (!facingLeft)
+            {
+                facingLeft = true;
+                this.FlipCharacter();
+            }
+        }
+        if(player.transform.position.x > this.transform.position.x)
+        {
+            if (facingLeft)
+            {
+                facingLeft = false;
+                this.FlipCharacter();
+            }
         }
 
         Debug.DrawRay(this.transform.position, direction * 30, Color.green);

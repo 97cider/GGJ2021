@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class Skeleton : Enemy
 {
-    public Color flickerColor;
 
     public float moveSpeed;
-
-    private SpriteRenderer _renderer;
 
     private int moveDir = 1;
 
@@ -60,8 +57,6 @@ public class Skeleton : Enemy
         // flash colors
         if(base._enemyHealth > 0)
         {
-            iTween.ShakeRotation(this.gameObject, new Vector3(0.0f, 0.0f, 50.0f), 0.3f);
-            StartCoroutine(DamageFlicker());
         }
     }
 
@@ -171,16 +166,6 @@ public class Skeleton : Enemy
         base.Die();
     }
 
-    private IEnumerator DamageFlicker()
-    {
-        for(int i = 0; i < 3; i++)
-        {
-            yield return new WaitForSeconds(0.05f);
-            _renderer.material.SetColor("_AdditiveTint", flickerColor);
-            yield return new WaitForSeconds(0.05f);
-            _renderer.material.SetColor("_AdditiveTint", Color.clear);
-        }
-    }
 
     public void CreateDeathParticles()
     {

@@ -84,18 +84,19 @@ public class RoomController : MonoBehaviour
             var r = player.GetComponent<PlayerStats>().getCompletedRooms();
             player.GetComponent<PlayerStats>().setCompletedRooms(r+1);
             r= player.GetComponent<PlayerStats>().getCompletedRooms();
-            uiController.setRoomsCompleted(r+1);
+            uiController.setRoomsCompleted(r);
             Debug.LogWarning(runsCompleted);
             while (new_level == _currentMap){
                 new_level = this.pickRandomRoom();
             }
             Debug.LogError(r);
-            if (r % 4 == 0 && r != 0){
+            if (r == 4){
                 Debug.LogError("SPAWN BOSS");
                 new_level = _bossRooms[runsCompleted];
                 _nextMap = new_level;
             }
-            else if ((r) % 5 == 0 && r != 0){
+            else if (r == 5){
+                r= player.GetComponent<PlayerStats>().getCompletedRooms();
                 this.isNewRun =true;
                 runsCompleted = runsCompleted+1;
                 uiController.setRunsCompleted(runsCompleted);
@@ -114,6 +115,9 @@ public class RoomController : MonoBehaviour
                 uiController.setAccessoryUi(a);
 
                 //Update the health ui to show the new change
+                r = 0;
+                player.GetComponent<PlayerStats>().setCompletedRooms(r);
+                uiController.setRoomsCompleted(r);
             }
             else{
                 isNewRun = false;
