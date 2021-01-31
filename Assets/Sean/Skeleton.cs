@@ -30,7 +30,7 @@ public class Skeleton : Enemy
 
     public Vector2 projectileOrientation;
 
-    public float projDamage;
+    public int projDamage;
     
     public bool isMoving = true;
 
@@ -54,7 +54,7 @@ public class Skeleton : Enemy
         canMove = true;
     }
 
-    public override void TakeDamage(float damage)
+    public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
         // flash colors

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5979378337400141392}
   - component: {fileID: 5979378337400141423}
   m_Layer: 0
-  m_Name: Accessory (3)
+  m_Name: slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,9 +46,10 @@ MonoBehaviour:
   AccessoryName: Slow
   accessorySprite: {fileID: -3659586958908341548, guid: 0d74c47e443c1e741a5cff1f8477c7fa,
     type: 3}
-  description: 
+  description: "<color=red>1</color>: Max HP \n<color=red>0.5</color>: Speed \n<color=grey>1</color>:
+    Jump Speed \n<color=grey>1</color>: Max Jumps \n"
   movementSpeedModifier: 0.5
   jumpSpeedModifier: 1
   maxJumpScalar: 1
-  maxHPModifier: 1
+  maxHPModifier: 3
   baselineDamageModifier: 2

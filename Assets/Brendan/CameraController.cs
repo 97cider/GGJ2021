@@ -16,7 +16,7 @@ public class CameraController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (targetLocation != null) {
             var tmpCam = new Vector3(this.transform.position.x, this.transform.position.y, 0);

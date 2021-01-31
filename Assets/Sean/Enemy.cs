@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] protected float _enemyMaxHealth;
 
-    [SerializeField] protected float _enemyContactDamage;
+    [SerializeField] protected int _enemyContactDamage;
 
     public UnityEvent<GameObject> DieEvents;
 
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         this._enemyHealth = this._enemyMaxHealth;
     }
 
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(int damage)
     {
         this._enemyHealth -= damage;
         if (this._enemyHealth <= 0)

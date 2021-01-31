@@ -6,6 +6,7 @@ public class PlayerEffectsController : MonoBehaviour
 {
     [SerializeField] private GameObject mainCamera;
 
+    public UiController ui;
     [SerializeField] private GameObject characterSprite;
 
 
@@ -36,6 +37,9 @@ public class PlayerEffectsController : MonoBehaviour
         // ShakePlayerScale();
     }
 
+    public void updateGui(){
+        ui.updateCurrentHealth();
+    }
     public void ShakePlayerScale()
     {
         iTween.ShakeScale(characterSprite, new Vector3(1.0f, -0.1f, 1.0f), 0.15f);

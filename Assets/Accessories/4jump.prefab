@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1657697144932160374}
   - component: {fileID: 1657697144932160369}
   m_Layer: 0
-  m_Name: Accessory (1)
+  m_Name: 4jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,9 +46,10 @@ MonoBehaviour:
   AccessoryName: 4Jump
   accessorySprite: {fileID: 6195342161226056101, guid: 0d74c47e443c1e741a5cff1f8477c7fa,
     type: 3}
-  description: 
+  description: "<color=red>1</color>: Max HP \n<color=grey>1</color>: Speed \n<color=grey>1</color>:
+    Jump Speed \n<color=green>2</color>: Max Jumps \n"
   movementSpeedModifier: 1
   jumpSpeedModifier: 1
   maxJumpScalar: 2
-  maxHPModifier: 1
+  maxHPModifier: 3
   baselineDamageModifier: 2
