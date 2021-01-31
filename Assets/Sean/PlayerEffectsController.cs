@@ -37,8 +37,12 @@ public class PlayerEffectsController : MonoBehaviour
         // ShakePlayerScale();
     }
 
-    public void updateGui(){
-        ui.updateCurrentHealth();
+    public void updateGui()
+    {
+        if(ui != null) 
+        {
+            ui.updateCurrentHealth();
+        }
     }
     public void ShakePlayerScale()
     {
