@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: 2188249288667542915
     second: GUISheet_2
+  - first:
+      213: -3042056511774490852
+    second: GUISheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -116,7 +119,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 224
+        y: 480
         width: 32
         height: 32
       alignment: 0
@@ -137,7 +140,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 224
+        y: 480
         width: 32
         height: 32
       alignment: 0
@@ -158,11 +161,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 384
         width: 96
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,6 +173,27 @@ TextureImporter:
       bones: []
       spriteID: 385b70b52293e5e10800000000000000
       internalID: 2188249288667542915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUISheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 365
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f740558b178c5d0800000000000000
+      internalID: -3042056511774490852
       vertices: []
       indices: 
       edges: []
