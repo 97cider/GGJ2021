@@ -199,9 +199,9 @@ MonoBehaviour:
   _maxHealth: 3
   _movementSpeed: 10
   _jumpModifier: 10
-  _currentWeapon: {fileID: 606699932490237785, guid: a00768f2bac578c4bbde38e9418ed02f,
+  _currentWeapon: {fileID: 1526918515870896266, guid: 054f890aa58e0e84a863e63ce98d07f6,
     type: 3}
-  _currentAccessory: {fileID: 1423451440003649016, guid: 77e4703c1dc678440a01a87a9753caea,
+  _currentAccessory: {fileID: 2247485750781794368, guid: 7eb07ab388e2cb040a5b6cf8615380a6,
     type: 3}
   _orientation: {x: 0, y: 0}
   _renderer: {fileID: 8491463938849043010}
@@ -565,7 +565,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 36
-  m_Sprite: {fileID: 5866494310949508119, guid: 107fadb4990a6d44285a2ce248894947,
+  m_Sprite: {fileID: -1315175341226311843, guid: 107fadb4990a6d44285a2ce248894947,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

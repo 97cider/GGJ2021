@@ -24,7 +24,8 @@ public class Room : MonoBehaviour
                 loadedEnemies = true;
             }
         }
-        if (isCleared){
+        if (enemies.Count == 0){
+            isCleared = true;
             playDoorOpeningAnimation();
             openDoors();
         }
