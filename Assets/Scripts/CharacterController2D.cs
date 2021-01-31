@@ -62,6 +62,11 @@ public class CharacterController2D : MonoBehaviour
     public UnityEvent OnLandEvent;
     public UnityEvent OnHeavyLandEvent;
 
+    public void setCCStats(float jfm, float hms, int mj){
+            m_JumpForce = m_JumpForce * jfm;
+            horizontalMovementSpeed =  horizontalMovementSpeed * hms;
+            maxJumps = maxJumps + mj;
+    }
     private void Awake()
     {
         playerstats = this.GetComponent<PlayerStats>();

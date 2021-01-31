@@ -42,6 +42,7 @@ public class RoomController : MonoBehaviour
             player.GetComponent<PlayerStats>().EquipWeapon(w);
             
             player.GetComponent<PlayerStats>().setMaxHP(a.maxHPModifier);
+            player.GetComponent<CharacterController2D>().setCCStats(a.jumpSpeedModifier, a.movementSpeedModifier, a.maxJumpScalar);
             player.transform.position = t.position;
             //player = Instantiate(player, t.position, Quaternion.identity) as GameObject;
         leftMost = new Vector3(0,0,zoffset);

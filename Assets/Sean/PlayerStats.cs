@@ -36,6 +36,7 @@ public class PlayerStats : MonoBehaviour
     public void setMaxHP(int max)
     {
         this._maxHealth = max;
+        this._currentHealth = max;
     }
     public int getCurrentHp(){
         return this._currentHealth;
