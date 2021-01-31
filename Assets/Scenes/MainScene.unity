@@ -1110,7 +1110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0025024414, y: 3.133606}
+  m_AnchoredPosition: {x: -0.0024414062, y: 3.133545}
   m_SizeDelta: {x: 0.005, y: 6.2712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454730303
@@ -1205,8 +1205,9 @@ MonoBehaviour:
   mainCamera: {fileID: 1742492649}
   isNewRun: 0
   _LoadedRooms:
-  - {fileID: 7579008359327370636, guid: b4464a8189c0c5542857f735fafe38e2, type: 3}
-  - {fileID: 3701746439977250055, guid: bb7c7f6d5dc78414eb726fc6d8a636fd, type: 3}
+  - {fileID: 3701746439977250055, guid: 41c55eeb0a89ca346ad60abc74b46b07, type: 3}
+  - {fileID: 3701746439977250055, guid: 0a1bd7681bd538541a4437524a3ef2f4, type: 3}
+  - {fileID: 3701746439977250055, guid: 70811e391f8056d43bb0c5d78a2db7ba, type: 3}
   uiController: {fileID: 389444909}
   player: {fileID: 72064872}
   itemController: {fileID: 478625675}
@@ -2586,7 +2587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.27886963, y: -0.5}
+  m_AnchoredPosition: {x: 0.2788086, y: -0.5}
   m_SizeDelta: {x: 0.55773926, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1549221116
@@ -2660,7 +2661,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581097436
@@ -2834,7 +2835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.5170288, y: 227}
+  m_AnchoredPosition: {x: 1.5170898, y: 227}
   m_SizeDelta: {x: -988.572, y: -579.958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1682168851
