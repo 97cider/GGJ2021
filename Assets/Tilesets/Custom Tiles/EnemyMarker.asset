@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: EnemyMarker
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 6478468677427506316, guid: 7704670b1125c5e4c99dfa003a854455,
+  m_DefaultSprite: {fileID: -1700907271347721036, guid: 7704670b1125c5e4c99dfa003a854455,
     type: 3}
   m_DefaultGameObject: {fileID: 6568816373824552928, guid: d87485678059ca548b042e85561b86e2,
     type: 3}
