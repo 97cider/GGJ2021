@@ -12,9 +12,12 @@ public class SlimeAI : MonoBehaviour
     [SerializeField] protected GameObject player;
 
     protected bool inAction;
+    protected bool canMove;
     [SerializeField] protected bool m_Grounded;
 
     protected Vector2 direction;
+
+
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float idleTime;
@@ -31,13 +34,20 @@ public class SlimeAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         aiState = State.Idle;
         inAction = false;
+        canMove = true;
         direction = new Vector2(1, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!inAction)
+        if (Input.GetButtonDown("T"))
+        {
+            CanMove(!canMove);
+            Debug.Log("changing can move");
+        }
+
+        if (!inAction && canMove)
         {
             DecideNewAction();
             inAction = true;
@@ -158,6 +168,16 @@ public class SlimeAI : MonoBehaviour
         else
         {
             return -1.0f;
+        }
+    }
+
+    public void CanMove(bool moveThatGearUp)
+    {
+        canMove = moveThatGearUp;
+        if (!canMove)
+        {
+            StopAllCoroutines();
+            inAction = false;
         }
     }
 }

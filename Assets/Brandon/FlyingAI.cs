@@ -10,6 +10,7 @@ public abstract class FlyingAI : MonoBehaviour
 
     protected State aiState;
     protected bool inAction;
+    protected bool canMove;
 
     protected Vector2 direction;
 
@@ -25,12 +26,19 @@ public abstract class FlyingAI : MonoBehaviour
         aiState = State.Idle;
         inAction = false;
         direction = new Vector2(1, 0);
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!inAction)
+        if(Input.GetButtonDown("T"))
+        {
+            CanMove(!canMove);
+            Debug.Log("changing can move");
+        }
+
+        if(!inAction && canMove)
         {
             DecideNewAction();
             inAction = true;
@@ -184,5 +192,15 @@ public abstract class FlyingAI : MonoBehaviour
         }
 
         return closeToPlayer;
+    }
+
+    public void CanMove(bool moveThatGearUp)
+    {
+        canMove = moveThatGearUp;
+        if (!canMove)
+        {
+            StopAllCoroutines();
+            inAction = false;
+        }
     }
 }
