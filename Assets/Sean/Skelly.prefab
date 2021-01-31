@@ -148,9 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0e0d5031836e14b9878cd0e9b7aa7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyHealth: 6
-  _enemyMaxHealth: 6
+  _enemyHealth: 3
+  _enemyMaxHealth: 3
   _enemyContactDamage: 1
+  _renderer: {fileID: 0}
   DieEvents:
     m_PersistentCalls:
       m_Calls:
@@ -180,7 +181,7 @@ MonoBehaviour:
         m_CallState: 2
   flickerColor: {r: 1, g: 1, b: 1, a: 0}
   moveSpeed: 1
-  skeletonDeathPrefab: {fileID: 623455169200097410, guid: b3da658e1a41f0c47b878f0c8af9d06f,
+  skeletonDeathPrefab: {fileID: 8614726768639745550, guid: eed7da5482752a9498985f717646468e,
     type: 3}
   playerDetectRange: 5
   attackCooldown: 1

@@ -402,7 +402,7 @@ PrefabInstance:
     - target: {fileID: 6501778966983000979, guid: 95f0078b31c5c654fb2d0573ef0dfcb4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6501778966983000979, guid: 95f0078b31c5c654fb2d0573ef0dfcb4,
         type: 3}
@@ -533,6 +533,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6501778966983000983, guid: 95f0078b31c5c654fb2d0573ef0dfcb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95f0078b31c5c654fb2d0573ef0dfcb4, type: 3}
 --- !u!1001 &1815094034
@@ -601,6 +606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FlyingEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3924429836730160931, guid: a3627f78eb449a043a654a4925e8a62e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3627f78eb449a043a654a4925e8a62e, type: 3}
@@ -880,7 +890,7 @@ PrefabInstance:
     - target: {fileID: 6966212189547135928, guid: 758a3207b0499f74abeec4ff51eeca7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6966212189547135928, guid: 758a3207b0499f74abeec4ff51eeca7e,
         type: 3}

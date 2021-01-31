@@ -131,7 +131,6 @@ public class Skeleton : Enemy
             if(this._playerTarget == null) 
             {
                 this._playerTarget = hits[0].collider.gameObject;  
-                _renderer.material.color = Color.cyan;
             }
         }
         else
@@ -140,8 +139,6 @@ public class Skeleton : Enemy
             {
                 this._playerTarget = null;
                 _currentAttackCooldown = attackCooldown;
-                _renderer.material.color = Color.red;
-
                 // float distance = _playerTarget.transform.position.x - this.transform.position.x;
                 // float direction = distance / Mathf.Abs(distance);
                 // if (direction != moveDir)
@@ -169,10 +166,7 @@ public class Skeleton : Enemy
 
     public void CreateDeathParticles()
     {
-        GameObject farticles = GameObject.Instantiate(this.skeletonDeathPrefab, this.transform.position, Quaternion.identity);
-        Vector3 farticalScale = farticles.transform.localScale;
-        farticalScale.x *= moveDir;
-        farticles.transform.localScale = farticalScale; 
+        Instantiate(this.skeletonDeathPrefab, this.transform.position, Quaternion.identity);
     }
 
     public void DestroyOnDeath()
