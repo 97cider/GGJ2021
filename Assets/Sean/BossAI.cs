@@ -129,6 +129,10 @@ public class BossAI : Enemy
         rightProjectile.damage = 1;
         rightProjectile.duration = 0.5f;
         rightProjectile.speed = 10.0f;
+        
+        Vector3 lfbScale = lfB.transform.localScale;
+        lfbScale.x *= -1;
+        rfB.transform.localScale = lfbScale;
     }
 
     public void ResetVelocity()
